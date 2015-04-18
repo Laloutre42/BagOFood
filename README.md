@@ -1,2 +1,2 @@
 # BagOFood
-BagOFood web application
+BagOFood Web application
