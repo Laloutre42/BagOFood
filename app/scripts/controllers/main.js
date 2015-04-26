@@ -1,20 +1,41 @@
 'use strict';
 
+/* Controllers */
+var bagOFoodControllers = angular.module('bagOFoodControllers', []);
+
 /**
  * @ngdoc function
- * @name bagOfoodApp.controller:MainCtrl
+ * @name bagOFoodControllers.controller:BagOFoodCtrl
  * @description
- * # MainCtrl
- * Controller of the bagOfoodApp
+ * # BagOFoodCtrl
+ * Controller of the bagOFoodApp
  */
-angular.module('bagOfoodApp')
-    .controller('MainCtrl', function ($scope) {
-        $scope.todos = ['Item 1', 'Item 2', 'Item 3'];
-        $scope.addTodo = function () {
-            $scope.todos.push($scope.todo);
-            $scope.todo = '';
-        };
-        $scope.removeTodo = function (index) {
-            $scope.todos.splice(index, 1);
-        };
-    });
+bagOFoodControllers.controller('BagOFoodCtrl', function ($scope, elasticSearchService, esFactory) {
+
+    $scope.searchProductCiqual2012 = function () {
+
+        $scope.productCiqual2012Results = [];
+
+        elasticSearchService.search({
+                index: 'bagofood',
+                type: 'ciqual2012',
+                fields: ['ORIGGPFR', 'ORIGFDNM'],
+                q: 'ORIGFDNM:*' + $scope.productCiqual2012 + '*'
+
+            })
+            .then(function (resp) {
+                resp.hits.hits.forEach(function (hit) {
+                    $scope.productCiqual2012Results.push(hit.fields);
+                });
+                $scope.error = null;
+            })
+            .catch(function (err) {
+                $scope.error = err;
+                // if the err is a NoConnections error, then the elasticSearchService was not able to connect to elasticsearch. In that case, create a more detailed error message
+                if (err instanceof esFactory.errors.NoConnections) {
+                    $scope.error = new Error('Unable to connect to elasticsearch. Make sure that it is running and listening at http://localhost:9200');
+                }
+            });
+
+    };
+});

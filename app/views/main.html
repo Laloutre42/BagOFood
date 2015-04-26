@@ -1,23 +1,35 @@
 <div class="container">
-    <h2>My todos</h2>
-
-    <!-- Todos input -->
-    <form role="form" ng-submit="addTodo()">
+    <h2>Product from Ciqual 2012</h2>
+    <!-- if there is an error, display its message -->
+    <div ng-if="error" class="alert alert-danger" role="alert">{{error.message}}</div>
+    <!-- Search product Ciqual 2012 input -->
+    <form role="form" ng-submit="searchProductCiqual2012()">
         <div class="row">
             <div class="input-group">
-                <input type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add">
-        </span>
+                <input type="text" ng-model="productCiqual2012" placeholder="Product name" class="form-control">
+                <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Search">
+            </span>
             </div>
         </div>
     </form>
+  <br>
 
-    <!-- Todos list -->
-    <p class="input-group" ng-repeat="todo in todos">
-        <input type="text" ng-model="todo" class="form-control">
-        <span class="input-group-btn">
-            <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
-        </span>
-    </p>
+  <!-- Products Ciqual 2012 list -->
+  <div class="table-responsive">
+    <table cellpadding="0" cellspacing="0" border="0" class="table table-condensed">
+      <thead>
+      <tr>
+        <th>Groupe d'aliment (ORIGGPFR)</th>
+        <th>Aliment (ORIGFDNM)</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="productCiqual2012 in productCiqual2012Results">
+      <tr>
+        <td>{{productCiqual2012.ORIGGPFR[0]}}</td>
+        <td>{{productCiqual2012.ORIGFDNM[0]}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

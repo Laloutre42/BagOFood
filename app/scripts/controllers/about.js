@@ -1,5 +1,7 @@
 'use strict';
 
+var bagOfoodControllers = angular.module('bagOfoodControllers', []);
+
 /**
  * @ngdoc function
  * @name bagOfoodApp.controller:AboutCtrl
@@ -7,11 +9,10 @@
  * # AboutCtrl
  * Controller of the bagOfoodApp
  */
-angular.module('bagOfoodApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+bagOfoodControllers.controller('AboutCtrl', function ($scope) {
+	$scope.awesomeThings = [
+		'HTML5 Boilerplate',
+		'AngularJS',
+		'Karma'
+	];
+});
