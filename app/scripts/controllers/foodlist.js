@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name bagOFoodApp.controller:MainCtrl
+ * @name bagOFoodApp.controller:FoodlistCtrl
  * @description
- * # MainCtrl
+ * # FoodlistCtrl
  * Controller of the bagOFoodApp
  */
 angular.module('bagOFoodApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('FoodlistCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
