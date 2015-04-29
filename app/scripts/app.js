@@ -16,19 +16,21 @@ angular.module('bagOFoodApp', [
   'ngSanitize',
   'ngTouch',
   'elasticsearch',
-  'ui.bootstrap',
-  'bagOFoodControllers',
-  'bagOFoodServices'
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'BagOFoodCtrl'
+        controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/foodList', {
+        templateUrl: 'views/foodlist.html',
+        controller: 'FoodlistCtrl'
+      })
+      .when('/productList', {
+        templateUrl: 'views/productlist.html',
+        controller: 'ProductlistCtrl'
       })
       .otherwise({
         redirectTo: '/'
