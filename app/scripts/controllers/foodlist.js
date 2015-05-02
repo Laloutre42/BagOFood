@@ -8,10 +8,18 @@
  * Controller of the bagOFoodApp
  */
 angular.module('bagOFoodApp')
-  .controller('FoodlistCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('FoodlistCtrl', function ($scope, $route, FoodListService) {
+
+    if ($route.current.listData === 'allFoodList') {
+      FoodListService.query().$promise.then(function (foodListList) {
+        $scope.foodListList = foodListList;
+      });
+    }
+    if ($route.current.listData === 'myFoodList') {
+
+      FoodListService.getFoodListByAuthorUserName({userName: 'Arnaud'}).$promise.then(function (foodListList) {
+        $scope.foodListList = foodListList;
+      });
+    }
+
   });
