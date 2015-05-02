@@ -1,1 +1,42 @@
-<p>This is the main view.</p>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h4 class="panel-title pull-left" style="padding-top: 7.5px;">List of list</h4>
+      <button class="btn btn-default pull-right" >Add a new list</button>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table datatable="" cellpadding="0" cellspacing="0" border="0" class="table table-condensed row-border hover">
+          <thead>
+          <tr>
+            <th column="name" class="sortable">Name</th>
+            <th column="author" class="sortable">Author</th>
+            <th></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{name}}</td>
+            <td>{{author}}</td>
+            <td><a>Items list</a></td>
+            <td class="editOrDeleteList">
+              <button type="button" class="edit btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+              <button type="button" class="remove btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+  </div>
+</div>
+
+

@@ -15,8 +15,11 @@ angular.module('bagOFoodApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
+  'ngResource',
+  'config',
   'elasticsearch',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'datatables'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,7 +29,13 @@ angular.module('bagOFoodApp', [
       })
       .when('/foodList', {
         templateUrl: 'views/foodlist.html',
-        controller: 'FoodlistCtrl'
+        controller: 'FoodlistCtrl',
+        listData: 'allFoodList'
+      })
+      .when('/myFoodList', {
+        templateUrl: 'views/foodlist.html',
+        controller: 'FoodlistCtrl',
+        listData: 'myFoodList'
       })
       .when('/productList', {
         templateUrl: 'views/productlist.html',
