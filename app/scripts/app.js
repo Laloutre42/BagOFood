@@ -16,6 +16,8 @@ angular.module('bagOFoodApp', [
   'ngSanitize',
   'ngTouch',
   'ngResource',
+  'validation',
+  'validation.rule',
   'config',
   'elasticsearch',
   'ui.bootstrap',
