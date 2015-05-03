@@ -11,9 +11,9 @@ angular.module('bagOFoodApp')
   .factory('FoodListService', function ($resource, ENV) {
     return $resource(ENV.apiEndpoint + '/foodlist/:id', {id: '@id'}, {
 
-      // Get food list by an author name
-      getFoodListByAuthorUserName: {
-        url: ENV.apiEndpoint + '/foodlist/userName/:userName',
+      // Get food list by an author id
+      getFoodListByUserId: {
+        url: ENV.apiEndpoint + '/foodlist/userId/:userId',
         method: 'GET',
         isArray: true
       },
