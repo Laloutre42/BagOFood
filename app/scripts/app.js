@@ -41,6 +41,10 @@ angular.module('bagOFoodApp', [
         templateUrl: 'views/productlist.html',
         controller: 'ProductlistCtrl'
       })
+      .when('/addNewFoodList', {
+        templateUrl: '../views/modal/addnewfoodlist.html',
+        controller: 'AddnewfoodlistCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
