@@ -31,6 +31,7 @@ module.exports = function(config) {
       'bower_components/elasticsearch/elasticsearch.js',
       'bower_components/datatables/media/js/jquery.dataTables.js',
       'bower_components/angular-datatables/dist/angular-datatables.js',
+      'bower_components/angular-validation/dist/angular-validation.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
