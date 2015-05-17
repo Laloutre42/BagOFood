@@ -1,0 +1,24 @@
+<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavBarController">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref='main.home'>
+        <span class="glyphicon glyphicon-home"></span> BagOfOOd
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li class="active"><a ui-sref='main.home'>Home</a></li>
+        <li><a ui-sref='main.home'>Product</a></li>
+        <li><a ui-sref='main.foodlist({type: "all"})'>All FoodList</a></li>
+        <li><a ui-sref='main.foodlist({type: "mine"})'>My FoodList</a></li>
+        <li><a ui-sref='main.itemlist({foodlistId: "5558c207164f83bf289c6691"})'>About</a></li>
+        <li><a ui-sref='main.home'>Contact</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>Current date: {{ date | date:'yyyy-MM-dd' }}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
