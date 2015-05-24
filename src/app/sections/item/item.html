@@ -8,7 +8,7 @@
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table datatable="ng" cellpadding="0" cellspacing="0" border="0" class="table table-condensed row-border hover">
+        <table datatable="ng" cellpadding="0" cellspacing="0" border="0" class="table table-condensed row-border table-hover">
           <thead>
           <tr>
             <th>Id</th>
@@ -20,12 +20,12 @@
           </tr>
           </thead>
           <tbody>
-          <tr ng-repeat="item in ::itemList">
-            <td>{{::item.id}}</td>
-            <td>{{::item.name}}</td>
-            <td>{{::item.category}}</td>
-            <td>{{::item.energyFor100}}</td>
-            <td>{{::item.weight}}</td>
+          <tr ng-repeat="item in itemList">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.energyFor100}}</td>
+            <td>{{item.weight}}</td>
             <td>
               <button ng-click="addItem(item)" type="button" class="edit btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-pencil"></span>
