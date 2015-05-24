@@ -35,7 +35,7 @@
 
         <div class="col-sm-10" ng-class="{'has-error': addItemForm.category.$invalid && addItemForm.category.$dirty}">
 
-          <select ng-model="::item.category" ng-options="category for category in categories" class="form-control" required></select>
+          <select ng-model="item.category" ng-options="category for category in categories" class="form-control" required></select>
 
           <div ng-messages="addItemForm.category.$error" ng-if='addItemForm.category.$dirty' class="error">
             <div ng-message="required" >Category is required</div>
@@ -51,7 +51,7 @@
 
         <div class="col-sm-10" ng-class="{'has-error': addItemForm.energyFor100.$invalid && addItemForm.energyFor100.$dirty}">
 
-          <input name="energyFor100" type="number" class="form-control" placeholder="Energy for 100g" ng-model="::item.energyFor100" required>
+          <input name="energyFor100" type="number" class="form-control" placeholder="Energy for 100g" ng-model="item.energyFor100" required>
 
           <div ng-messages="addItemForm.energyFor100.$error" ng-if='addItemForm.energyFor100.$dirty' class="error">
             <div ng-message="required" >Energy for 100g is required</div>
@@ -68,7 +68,7 @@
 
         <div class="col-sm-10" ng-class="{'has-error': addItemForm.weight.$invalid && addItemForm.weight.$dirty}">
 
-          <input name="weight" type="number" class="form-control" placeholder="Weight" ng-model="::item.weight" required>
+          <input name="weight" type="number" class="form-control" placeholder="Weight" ng-model="item.weight" required>
 
           <div ng-messages="addItemForm.weight.$error" ng-if='addItemForm.weight.$dirty' class="error">
             <div ng-message="required" >Weight is required</div>
@@ -87,7 +87,7 @@
 
   <!--Footer-->
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+  <button type="button" class="btn btn-default" ng-click="back()">Cancel</button>
   <button validation-submit="addItemForm" type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="addItemForm.$invalid" >Save changes</button>
 </div>
 

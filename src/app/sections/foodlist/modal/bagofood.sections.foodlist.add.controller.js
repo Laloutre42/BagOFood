@@ -2,11 +2,11 @@
 
 
 angular.module('bagofood.sections.foodlist.add.controller', ['bagofood.core.service.foodlist'])
-  .controller('AddFoodlistController', function ($scope, $modalInstance, FoodListService, foodList) {
+  .controller('AddFoodlistController', function ($scope, $log, $stateParams, $previousState, FoodListService) {
 
-    $scope.foodList = angular.copy(foodList) || {};
+    $scope.foodList = angular.copy($stateParams.foodList) || {};
 
-    // Valid modal
+    // Valid form
     $scope.ok = function () {
 
       // Todo to change userId (session storage?)
@@ -16,12 +16,12 @@ angular.module('bagofood.sections.foodlist.add.controller', ['bagofood.core.serv
         email: "Arnaud@gmail.com"
       },
 
-        FoodListService.save($scope.foodList).$promise.then($modalInstance.close);
+        FoodListService.save($scope.foodList).$promise.then($previousState.go());
 
     };
 
-    // Cancel modal
+    // Cancel form
     $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
+      $previousState.go()
     };
   });

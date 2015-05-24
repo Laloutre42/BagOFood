@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('bagofood.core.service', ['bagofood.core.service.foodlist']);
+angular.module('bagofood.core.service', ['bagofood.core.service.foodlist', 'bagofood.core.service.product', 'bagofood.core.service.previousState']);

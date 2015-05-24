@@ -17,17 +17,19 @@
 
   <!-- Products Ciqual 2012 list -->
   <div class="table-responsive">
-    <table cellpadding="0" cellspacing="0" border="0" class="table table-condensed">
+    <table class="table table-striped table-hover table-bordered">
       <thead>
       <tr>
         <th>Groupe d'aliment (ORIGGPFR)</th>
         <th>Aliment (ORIGFDNM)</th>
+        <th>Energie (kcal/100g)</th>
       </tr>
       </thead>
-      <tbody ng-repeat="productCiqual2012 in filteredProductCiqual2012Results">
-      <tr>
-        <td>{{productCiqual2012.ORIGGPFR[0]}}</td>
-        <td>{{productCiqual2012.ORIGFDNM[0]}}</td>
+      <tbody >
+      <tr ng-repeat="productCiqual2012 in filteredProductCiqual2012Results" ng-click="openModalForDetailProduct(productCiqual2012)">
+        <td>{{productCiqual2012.origgpfr}}</td>
+        <td>{{productCiqual2012.origfdnm}}</td>
+        <td>{{productCiqual2012.energie_reglement_ue_1169_2011_kcal_100g}}</td>
       </tr>
       </tbody>
     </table>
