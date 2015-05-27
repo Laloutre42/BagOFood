@@ -1,17 +1,8 @@
-<!-- Modal -->
-  <!--Header-->
-<div class="modal-header">
-  <button type="button" class="close " ng-click="cancel()">
-    <span aria-hidden="true">&times;</span>
-    <span class="sr-only">Close</span>
-  </button>
-  <h4 class="modal-title" >Item</h4>
-</div>
+<div class=row>
+  <h4>Items</h4>
 
-  <!--Body-->
-<div class="modal-body">
-  <form name="addItemForm" class="form-horizontal" role="form">
-    <div class="modal-body">
+  <div>
+    <form name="addItemForm" class="form-horizontal" role="form">
 
       <!--Name-->
       <div class="form-group name">
@@ -79,16 +70,12 @@
 
       </div>
 
+    </form>
+  </div>
 
-
-    </div>
-  </form>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default" ng-click="back()">Cancel</button>
+    <button validation-submit="addItemForm" type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="addItemForm.$invalid" >Save changes</button>
+  </div>
 </div>
-
-  <!--Footer-->
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" ng-click="back()">Cancel</button>
-  <button validation-submit="addItemForm" type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="addItemForm.$invalid" >Save changes</button>
-</div>
-
 

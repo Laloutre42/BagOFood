@@ -1,25 +1,38 @@
 'use strict';
 
-angular.module('bagofood.sections.product.controller', ['bagofood.core.service.product', 'bagofood.sections.product.detail.controller'])
-  .controller('ProductController', function ($scope, $modal, $log, ProductService) {
+angular.module('bagofood.sections.product.controller', ['ngTable', 'bagofood.core.service.product', 'bagofood.sections.product.detail.controller'])
+  .controller('ProductController', function ($scope, $modal, $log, ProductService, ngTableParams) {
 
     $scope.seeAllDetails = false;
+    $scope.totalProductsFound = -1;
 
-    $scope.filteredProductCiqual2012Results = [];
+    /**
+     * Ng table for result
+     * @type {ngTableParams}
+     */
+    $scope.productTable = new ngTableParams({
+      page: 1,
+      count: 10
+    }, {
+      total: 0,
+      getData: function ($defer, params) {
+        $scope.searchProductCiqual2012($defer, params);
+      }
+    });
 
     /**
      * Search product in Ciqual 2012 database
      */
-    $scope.searchProductCiqual2012 = function () {
+    $scope.searchProductCiqual2012 = function ($defer, params) {
 
       // No search if search field is null
       if ($scope.productCiqual2012) {
 
-        $scope.filteredProductCiqual2012Results = [];
-
-        ProductService.query().$promise.then(function (result) {
-          $scope.filteredProductCiqual2012Results = result;
-          $log.debug('[searchProductCiqual2012] length is ', $scope.filteredProductCiqual2012Results.length)
+        ProductService.getFoodListByOrigfdnm({'origfdnm': $scope.productCiqual2012}).$promise.then(function (data) {
+          $log.debug('[searchProductCiqual2012] length is ', data.length);
+          $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+          params.total(data.length);
+          $scope.totalProductsFound = data.length;
         });
       }
     };

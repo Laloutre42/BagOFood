@@ -16,12 +16,16 @@ angular.module('bagofood.sections.foodlist.add.controller', ['bagofood.core.serv
         email: "Arnaud@gmail.com"
       },
 
-        FoodListService.save($scope.foodList).$promise.then($previousState.go());
+        FoodListService.save($scope.foodList).$promise.then(
+          function (data){
+            $scope.back();
+          }
+        );
 
     };
 
     // Cancel form
-    $scope.cancel = function () {
-      $previousState.go()
+    $scope.back = function () {
+      $previousState.go();
     };
   });
