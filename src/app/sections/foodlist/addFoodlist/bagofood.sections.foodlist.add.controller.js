@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('bagofood.sections.foodlist.add.controller', ['bagofood.core.service.foodlist'])
   .controller('AddFoodlistController', function ($scope, $log, $stateParams, $previousState, FoodListService) {
 

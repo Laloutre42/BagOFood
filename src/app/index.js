@@ -8,6 +8,8 @@ angular.module('bagofood', [
   'ngSanitize',
   'ngResource',
   'ngMessages',
+  //ngTable
+  'ngTable',
   // Ui
   'ui.bootstrap',
   // My app

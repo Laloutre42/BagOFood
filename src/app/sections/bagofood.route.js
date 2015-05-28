@@ -16,9 +16,9 @@ angular.module('bagofood.route', ['ui.router'])
         templateUrl: 'app/sections/foodlist/foodlist.html',
         controller: 'FoodListController'
       })
-      .state('main.addFoodlist', {
-        url: '/addFoodlist',
-        templateUrl: 'app/sections/foodlist/modal/foodlist.add.html',
+      .state('main.modal', {
+        url: '/modal',
+        templateUrl: 'app/sections/foodlist/addFoodlist/foodlist.add.html',
         controller: 'AddFoodlistController',
         params: {'foodList': null }
       })
@@ -30,15 +30,9 @@ angular.module('bagofood.route', ['ui.router'])
       })
       .state('main.addItem', {
         url: '/addItem',
-        templateUrl: 'app/sections/item/modal/item.add.html',
+        templateUrl: 'app/sections/item/addItem/item.add.html',
         controller: 'AddItemController',
         params: {'item': null, 'foodListId': null }
-      })
-      // Product
-      .state('main.product', {
-        url: '/foodlist/product',
-        templateUrl: 'app/sections/product/product.html',
-        controller: 'ProductController'
       })
     ;
 
