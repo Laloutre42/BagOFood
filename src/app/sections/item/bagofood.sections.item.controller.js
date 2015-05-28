@@ -1,9 +1,21 @@
 'use strict';
 
 angular.module('bagofood.sections.item.controller', ['bagofood.sections.item.add.controller'])
-  .controller('ItemListController', function ($scope, $log, $stateParams, $state, FoodListService) {
+  .controller('ItemListController', function ($scope, $log, $stateParams, $state, ngTableParams, FoodListService) {
 
-    getItemList();
+    /**
+     * Ng table to display items
+     * @type {ngTableParams}
+     */
+    $scope.itemTable = new ngTableParams({
+      page: 1,
+      count: 10
+    }, {
+      total: 0,
+      getData: function ($defer, params) {
+        getItemList($defer, params);
+      }
+    });
 
     // Open a form to add a new item on food list
     $scope.addItem = function (item) {
@@ -14,11 +26,12 @@ angular.module('bagofood.sections.item.controller', ['bagofood.sections.item.add
       FoodListService.deleteItemOnFoodList({'id': $stateParams.foodListId, 'itemId': item.id}).$promise.then(getItemList);
     };
 
-    function getItemList() {
+    function getItemList($defer, params) {
 
-      FoodListService.getFoodListItemsById({'id': $stateParams.foodListId}).$promise.then(function (itemList) {
-        $scope.itemList = itemList;
-        $log.debug('[getItemList] length is ', $scope.itemList.length)
+      FoodListService.getFoodListItemsById({'id': $stateParams.foodListId}).$promise.then(function (data) {
+        $log.debug('[getItemList] length is ', data.length);
+        $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+        params.total(data.length);
       });
     }
 
