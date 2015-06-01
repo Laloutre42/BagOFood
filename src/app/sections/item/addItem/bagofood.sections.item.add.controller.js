@@ -4,7 +4,7 @@ angular.module('bagofood.sections.item.add.controller', ['bagofood.core.service.
   .controller('AddItemController', function ($stateParams, $modal, $log, $previousState, ngTableParams, ProductService, CONST, FoodListService) {
 
     var vm = this;
-    vm.item = angular.copy($stateParams.item) || {category: CONST.itemCategories[0]};
+    vm.item = angular.copy($stateParams.item) || {category: CONST.itemCategories[0], catalog: 'Ciqual 2012'};
     vm.categories = CONST.itemCategories;
     vm.seeAllDetails = false;
     vm.totalProductsFound = -1;

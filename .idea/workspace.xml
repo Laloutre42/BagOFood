@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df7b92d5-52da-4809-b935-0e2f947051ad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/bagofood.route.js" afterPath="$PROJECT_DIR$/src/app/sections/bagofood.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/bagofood.sections.foodlist.add.controller.js" afterPath="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/bagofood.sections.foodlist.add.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/foodlist/bagofood.sections.foodlist.controller.js" afterPath="$PROJECT_DIR$/src/app/sections/foodlist/bagofood.sections.foodlist.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/item/addItem/bagofood.sections.item.add.controller.js" afterPath="$PROJECT_DIR$/src/app/sections/item/addItem/bagofood.sections.item.add.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/item/bagofood.sections.item.controller.js" afterPath="$PROJECT_DIR$/src/app/sections/item/bagofood.sections.item.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/foodlist.add.html" afterPath="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/foodlist.add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/foodlist/foodlist.html" afterPath="$PROJECT_DIR$/src/app/sections/foodlist/foodlist.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html" afterPath="$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/item/item.html" afterPath="$PROJECT_DIR$/src/app/sections/item/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/sections/main/main.html" afterPath="$PROJECT_DIR$/src/app/sections/main/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BagOFoodGulp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,17 +32,27 @@
         <entry file="file://$PROJECT_DIR$/src/app/sections/item/addItem/bagofood.sections.item.add.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <caret line="6" column="106" selection-start-line="6" selection-start-column="106" selection-end-line="6" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.add.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/sections/item/item.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33028573" vertical-offset="0" max-vertical-offset="875">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item.add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="2074">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state vertical-scroll-proportion="-19.615385" vertical-offset="714" max-vertical-offset="2346">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,12 +121,12 @@
         <option value="$PROJECT_DIR$/src/app/sections/bagofood.route.js" />
         <option value="$PROJECT_DIR$/src/app/sections/foodlist/bagofood.sections.foodlist.controller.js" />
         <option value="$PROJECT_DIR$/src/app/sections/foodlist/foodlist.html" />
-        <option value="$PROJECT_DIR$/src/app/sections/item/item.html" />
         <option value="$PROJECT_DIR$/src/app/sections/item/bagofood.sections.item.controller.js" />
         <option value="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/bagofood.sections.foodlist.add.controller.js" />
         <option value="$PROJECT_DIR$/src/app/sections/foodlist/addFoodlist/foodlist.add.html" />
-        <option value="$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html" />
         <option value="$PROJECT_DIR$/src/app/sections/item/addItem/bagofood.sections.item.add.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html" />
+        <option value="$PROJECT_DIR$/src/app/sections/item/item.html" />
       </list>
     </option>
   </component>
@@ -600,7 +602,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23222749" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -976,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/sections/item/item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="663">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/sections/item/bagofood.sections.item.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26415095" vertical-offset="0" max-vertical-offset="901">
@@ -1019,15 +1013,23 @@
     <entry file="file://$PROJECT_DIR$/src/app/sections/item/addItem/bagofood.sections.item.add.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <caret line="6" column="106" selection-start-line="6" selection-start-column="106" selection-end-line="6" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/sections/item/addItem/item.add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="2074">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state vertical-scroll-proportion="-19.615385" vertical-offset="714" max-vertical-offset="2346">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/sections/item/item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33028573" vertical-offset="0" max-vertical-offset="875">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>
