@@ -14,24 +14,25 @@ angular.module('bagofood.route', ['ui.router'])
       .state('main.foodlist', {
         url: '/foodlist/:type',
         templateUrl: 'app/sections/foodlist/foodlist.html',
-        controller: 'FoodListController'
+        controller: 'FoodListController as vm'
       })
       .state('main.modal', {
         url: '/modal',
         templateUrl: 'app/sections/foodlist/addFoodlist/foodlist.add.html',
-        controller: 'AddFoodlistController',
+        controller: 'AddFoodlistController as vm',
         params: {'foodList': null }
       })
       // Items
       .state('main.itemlist', {
         url: '/foodlist/:foodListId/items',
         templateUrl: 'app/sections/item/item.html',
-        controller: 'ItemListController'
+        controller: 'ItemListController as vm',
+        params: {'foodList': null }
       })
       .state('main.addItem', {
         url: '/addItem',
         templateUrl: 'app/sections/item/addItem/item.add.html',
-        controller: 'AddItemController',
+        controller: 'AddItemController as vm',
         params: {'item': null, 'foodListId': null }
       })
     ;

@@ -1,30 +1,33 @@
 'use strict';
 
 angular.module('bagofood.sections.foodlist.add.controller', ['bagofood.core.service.foodlist'])
-  .controller('AddFoodlistController', function ($scope, $log, $stateParams, $previousState, FoodListService) {
+  .controller('AddFoodlistController', function ($log, $stateParams, $previousState, FoodListService) {
 
-    $scope.foodList = angular.copy($stateParams.foodList) || {};
+    var vm = this;
+    vm.foodList = angular.copy($stateParams.foodList) || {};
+    vm.ok = ok;
+    vm.back = back;
 
     // Valid form
-    $scope.ok = function () {
+    function ok() {
 
       // Todo to change userId (session storage?)
-      $scope.foodList.user = {
+      vm.foodList.user = {
         id: 2,
         name: "Arnaud",
         email: "Arnaud@gmail.com"
       },
 
-        FoodListService.save($scope.foodList).$promise.then(
-          function (data){
-            $scope.back();
+        FoodListService.save(vm.foodList).$promise.then(
+          function (data) {
+            vm.back();
           }
         );
 
     };
 
     // Cancel form
-    $scope.back = function () {
+    function back() {
       $previousState.go();
     };
   });
