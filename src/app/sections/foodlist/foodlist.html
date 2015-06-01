@@ -3,15 +3,14 @@
 
     <div class="panel-heading clearfix">
       <h4 class="panel-title pull-left panel-title-list" >Food lists</h4>
-      <button ng-click="addFoodList()" class="btn btn-default pull-right">Add a new list</button>
+      <button ng-click="vm.addFoodList()" class="btn btn-default pull-right">Add a new list</button>
     </div>
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table ng-table="foodlistTable" class="table table-condensed row-border table-hover">
+        <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover">
           <thead>
           <tr>
-            <th>Id</th>
             <th>Author</th>
             <th>Name</th>
             <th>Description</th>
@@ -20,15 +19,14 @@
           </thead>
           <tbody>
           <tr ng-repeat="foodList in $data">
-            <td ng-click="navigateToDetailFoodList(foodList.id)">{{foodList.id}}</td>
-            <td ng-click="navigateToDetailFoodList(foodList.id)">{{foodList.user.name}}</td>
-            <td ng-click="navigateToDetailFoodList(foodList.id)">{{foodList.name}}</td>
-            <td ng-click="navigateToDetailFoodList(foodList.id)">{{foodList.description}}</td>
+            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.user.name}}</td>
+            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.name}}</td>
+            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.description}}</td>
             <td>
-              <button ng-click="addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm">
+              <button ng-click="vm.addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
-              <button ng-click="removeFoodList(foodList)" type="button" class="remove btn btn-default btn-sm">
+              <button ng-click="vm.removeFoodList(foodList)" type="button" class="remove btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </td>

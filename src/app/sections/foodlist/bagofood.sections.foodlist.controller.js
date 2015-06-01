@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('bagofood.sections.foodlist.controller', ['bagofood.core.service.foodlist', 'bagofood.sections.foodlist.add.controller'])
-  .controller('FoodListController', function ($scope, $log, $stateParams, $state, ngTableParams, FoodListService) {
+  .controller('FoodListController', function ($log, $stateParams, $state, ngTableParams, FoodListService) {
 
-    /**
-     * Ng table to display foodlist
-     * @type {ngTableParams}
-     */
-    $scope.foodlistTable = new ngTableParams({
+    var vm = this;
+    vm.addFoodList = addFoodList;
+    vm.navigateToDetailFoodList = navigateToDetailFoodList;
+    vm.removeFoodList = removeFoodList;
+
+    // ng table to display data
+    vm.foodlistTable = new ngTableParams({
       page: 1,
       count: 10
     }, {
@@ -18,18 +20,19 @@ angular.module('bagofood.sections.foodlist.controller', ['bagofood.core.service.
     });
 
     // Open a modal to add a new food list
-    $scope.addFoodList = function (foodList) {
+    function addFoodList(foodList) {
       $state.go('main.modal', {foodList: foodList});
     };
 
     // Navigate to the foodlist detail (item list)
-    $scope.navigateToDetailFoodList = function(foodListId){
-      $state.go('main.itemlist',{foodListId: foodListId});
+    function navigateToDetailFoodList(foodList){
+      $state.go('main.itemlist',{foodListId: foodList.id, foodList: foodList});
     };
 
-    $scope.removeFoodList = function (foodList) {
-      // TODO
-      FoodListService.delete({'id': foodList.id}).$promise.then($scope.foodlistTable.reload);
+    function removeFoodList(foodList) {
+      FoodListService.delete({'id': foodList.id}).$promise.then(function(){
+        vm.foodlistTable.reload();
+      });
     };
 
     function getAllFoodList($defer, params) {

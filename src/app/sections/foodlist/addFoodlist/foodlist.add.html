@@ -10,7 +10,7 @@
 
           <div class="col-sm-10" ng-class="{'has-error': addNewFoodListForm.name.$invalid && addNewFoodListForm.name.$dirty}">
 
-            <input name="name" type="text" class="form-control" placeholder="Name" ng-model="foodList.name" required maxlength="50">
+            <input name="name" type="text" class="form-control" placeholder="Name" ng-model="vm.foodList.name" required maxlength="50">
 
             <div ng-messages="addNewFoodListForm.name.$error" ng-if='addNewFoodListForm.name.$dirty' class="error">
               <div ng-message="required" >Name is required</div>
@@ -26,7 +26,7 @@
           <label class="col-sm-2 control-label">Description</label>
 
           <div class="col-sm-10">
-            <textarea name="description" class="form-control" rows="5" placeholder="Description" ng-model="foodList.description"/>
+            <textarea name="description" class="form-control" rows="5" placeholder="Description" ng-model="vm.foodList.description"/>
           </div>
         </div>
 
@@ -34,8 +34,8 @@
   </div>
 
   <div class="pull-right">
-    <button type="button" class="btn btn-default" ng-click="back()">Cancel</button>
-    <button validation-submit="addNewFoodListForm" type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="addNewFoodListForm.$invalid" >Save changes</button>
+    <button type="button" class="btn btn-default" ng-click="vm.back()">Cancel</button>
+    <button validation-submit="addNewFoodListForm" type="submit" class="btn btn-primary" ng-click="vm.ok()" ng-disabled="addNewFoodListForm.$invalid" >Save changes</button>
   </div>
 </div>
 
