@@ -11,13 +11,6 @@ angular.module('bagofood.core.service.foodlist', [])
         isArray: true
       },
 
-      // Get all items on food list id
-      getFoodListItemsById: {
-        url: ENV.apiEndpoint + '/foodlist/:id/items',
-        method: 'GET',
-        isArray: true
-      },
-
       // Add item on food list id
       addItemOnFoodList: {
         url: ENV.apiEndpoint + '/foodlist/:id/items',

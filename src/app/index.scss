@@ -14,9 +14,30 @@
 }
 
 // Perso
-
 .error {
   color: #a94442;
+}
+
+// Ng table override
+.ng-table th {
+  text-align: left;
+}
+
+.ng-table th.sortable.sort-desc, .ng-table th.sortable.sort-asc {
+  background-color: inherit;
+}
+
+// Click cursor on foodlist rox
+.foodListRowClick {
+  cursor: pointer;
+}
+
+.twelvePercentWidthRow {
+  width: 12%;
+}
+
+.v-middle > tbody > tr > td {
+  vertical-align: middle;
 }
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject

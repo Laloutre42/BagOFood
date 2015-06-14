@@ -26,7 +26,7 @@ angular.module('bagofood.sections.foodlist.controller', ['bagofood.core.service.
 
     // Navigate to the foodlist detail (item list)
     function navigateToDetailFoodList(foodList){
-      $state.go('main.itemlist',{foodListId: foodList.id, foodList: foodList});
+      $state.go('main.itemslist',{foodListId: foodList.id});
     };
 
     function removeFoodList(foodList) {

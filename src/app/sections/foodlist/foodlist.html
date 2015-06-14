@@ -8,21 +8,13 @@
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover">
-          <thead>
-          <tr>
-            <th>Author</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th></th>
-          </tr>
-          </thead>
+        <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover v-middle">
           <tbody>
           <tr ng-repeat="foodList in $data">
-            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.user.name}}</td>
-            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.name}}</td>
-            <td ng-click="vm.navigateToDetailFoodList(foodList)">{{foodList.description}}</td>
-            <td>
+            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'author'" data-title="'Author'">{{foodList.user.name}}</td>
+            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'name'" data-title="'Name'">{{foodList.name}}</td>
+            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'description'" data-title="'Description'">{{foodList.description}}</td>
+            <td class="twelvePercentWidthRow" align="center">
               <button ng-click="vm.addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
