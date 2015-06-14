@@ -10,6 +10,7 @@ angular.module('bagofood.route', ['ui.router'])
         url: '/',
         templateUrl: 'app/sections/home/home.html'
       })
+
       // Foodlist
       .state('main.foodlist', {
         url: '/foodlist/:type',
@@ -20,20 +21,38 @@ angular.module('bagofood.route', ['ui.router'])
         url: '/modal',
         templateUrl: 'app/sections/foodlist/addFoodlist/foodlist.add.html',
         controller: 'AddFoodlistController as vm',
-        params: {'foodList': null }
+        params: {'foodList': null}
       })
+
       // Items
-      .state('main.itemlist', {
+      .state('main.itemslist', {
         url: '/foodlist/:foodListId/items',
         templateUrl: 'app/sections/item/item.html',
-        controller: 'ItemListController as vm',
-        params: {'foodList': null }
+        controller: 'ItemsListController as vm'
       })
       .state('main.addItem', {
         url: '/addItem',
         templateUrl: 'app/sections/item/addItem/item.add.html',
         controller: 'AddItemController as vm',
-        params: {'item': null, 'foodListId': null }
+        params: {'item': null, 'foodListId': null}
+      })
+
+      // Items foodlist caracteristics
+      .state('main.itemslist.description', {
+        templateUrl: 'app/sections/item/description/description.html',
+        controller: 'ItemsListDescriptionController as vm'
+      })
+      .state('main.itemslist.statisticsCharHisto', {
+        templateUrl: 'app/sections/item/statistics-chart-histo/statistics-chart-histo.html',
+        controller: 'ItemsListStatisticsChartHistoController as vm'
+      })
+      .state('main.itemslist.statisticsChartPie', {
+        templateUrl: 'app/sections/item/statistics-chart-pie/statistics-chart-pie.html',
+        controller: 'ItemsListStatisticsChartPieController as vm'
+      })
+      .state('main.itemslist.statisticsTable', {
+        templateUrl: 'app/sections/item/statistics-table/statistics-table.html',
+        controller: 'ItemsListStatisticsTableController as vm'
       })
     ;
 

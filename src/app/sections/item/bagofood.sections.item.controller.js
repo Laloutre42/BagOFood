@@ -1,10 +1,18 @@
 'use strict';
 
-angular.module('bagofood.sections.item.controller', ['bagofood.sections.item.add.controller'])
-  .controller('ItemListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService) {
+angular.module('bagofood.sections.item.controller',
+  [
+    'bagofood.sections.item.add.controller',
+    'bagofood.sections.item.description.controller',
+    'bagofood.sections.item.statistics-table.controller',
+    'bagofood.sections.item.statistics-chart-histo.controller',
+    'bagofood.sections.item.statistics-chart-pie.controller'
+  ])
+  .controller('ItemsListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService) {
 
     var vm = this;
-    vm.foodList = $stateParams.foodList;
+    vm.radioViewTypeSelection = 0;
+    vm.foodList = {};
     vm.addItem = addItem;
     vm.removeItem = removeItem;
 
@@ -15,7 +23,7 @@ angular.module('bagofood.sections.item.controller', ['bagofood.sections.item.add
     }, {
       total: 0,
       getData: function ($defer, params) {
-        getItemList($defer, params);
+        getItemsList($defer, params);
       }
     });
 
@@ -26,18 +34,22 @@ angular.module('bagofood.sections.item.controller', ['bagofood.sections.item.add
 
     function removeItem(item) {
       FoodListService.deleteItemOnFoodList({'id': $stateParams.foodListId, 'itemId': item.id}).$promise.then(function () {
-        $scope.itemTable.reload();
+        vm.itemTable.reload();
       });
     };
 
-    function getItemList($defer, params) {
+    function getItemsList($defer, params) {
 
-      FoodListService.getFoodListItemsById({'id': $stateParams.foodListId}).$promise.then(function (data) {
-        $log.debug('[getItemList] length is ', data.length);
+      FoodListService.get({'id': $stateParams.foodListId}).$promise.then(function (data) {
+        vm.foodList = data;
+        $log.debug('[getItemsList] length is ', vm.foodList.itemList.length);
 
-        var orderedData = params.sorting() ? $filter('orderBy')(data, vm.itemTable.orderBy()) : data;
+        var orderedData = params.sorting() ? $filter('orderBy')(vm.foodList.itemList, vm.itemTable.orderBy()) : vm.foodList.itemList;
         $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
         params.total(orderedData.length);
+
+        //Now go to description by default
+        $state.go('main.itemslist.description');
       });
     }
 

@@ -1,14 +1,41 @@
+<!--Navigation buttons-->
+<div class="row">
+  <label><h4>{{vm.foodList.name}}</h4></label>
+
+  <div class="pull-right">
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="0" ui-sref='main.itemslist.description'>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    </label>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="1" ui-sref='main.itemslist.statisticsCharHisto'>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    </label>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="2" ui-sref='main.itemslist.statisticsChartPie'>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    </label>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="3" ui-sref='main.itemslist.statisticsTable'>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
+
+<!--Foodlist caracteristics-->
+<div class="row">
+  <div ui-view></div>
+</div>
+
+  <!--Items-->
+<br>
 <div class="row">
   <div class="panel panel-default">
 
     <div class="panel-heading clearfix">
-      <h4 class="panel-title pull-left">{{vm.foodList.name}}</h4>
+      <h4 class="panel-title pull-left">FoodList items</h4>
       <button ng-click="vm.addItem()" class="btn btn-default pull-right">Add a new item</button>
     </div>
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table ng-table="vm.itemTable" class="table table-condensed row-border table-hover">
+        <table ng-table="vm.itemTable" class="table table-condensed row-border table-hover v-middle">
           <tbody>
           <tr ng-repeat="item in $data">
             <td sortable="'category'" data-title="'Category'">{{item.category}}</td>
@@ -16,7 +43,7 @@
             <td sortable="'energyFor100'" data-title="'Energy for 100g'">{{item.energyFor100}}</td>
             <td sortable="'weight'" data-title="'Weight'">{{item.weight}}</td>
             <td data-title="'Catalog'">{{item.catalog}}</td>
-            <td>
+            <td class="twelvePercentWidthRow" align="center">
               <button ng-click="vm.addItem(item)" type="button" class="edit btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
