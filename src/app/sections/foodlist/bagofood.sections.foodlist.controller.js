@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bagofood.sections.foodlist.controller', ['bagofood.core.service.foodlist', 'bagofood.sections.foodlist.add.controller'])
+angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.foodlist.add.controller'])
   .controller('FoodListController', function ($log, $stateParams, $state, ngTableParams, FoodListService) {
 
     var vm = this;
