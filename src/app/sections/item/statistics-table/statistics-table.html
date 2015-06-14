@@ -1,0 +1,47 @@
+<table class="table table-condensed row-border v-middle">
+  <thead>
+  <th>Category</th>
+  <th>Items</th>
+  <th>Total weight (g)</th>
+  <th>Total energy (kcal)</th>
+  <th>Average energy (kcal/100g)</th>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{vm.categories[0]}}</td>
+    <td>{{vm.totalObject.totalBreakfast.nbItems}}</td>
+    <td>{{vm.totalObject.totalBreakfast.totalWeight}}</td>
+    <td>{{vm.totalObject.totalBreakfast.totalEnergy}}</td>
+    <td>{{vm.totalObject.totalBreakfast.averagelEnergy100g}}</td>
+  </tr>
+  <tr>
+    <td>{{vm.categories[1]}}</td>
+    <td>{{vm.totalObject.totalSnack.nbItems}}</td>
+    <td>{{vm.totalObject.totalSnack.totalWeight}}</td>
+    <td>{{vm.totalObject.totalSnack.totalEnergy}}</td>
+    <td>{{vm.totalObject.totalSnack.averagelEnergy100g}}</td>
+  </tr>
+  <tr>
+    <td>{{vm.categories[2]}}</td>
+    <td>{{vm.totalObject.totalLunch.nbItems}}</td>
+    <td>{{vm.totalObject.totalLunch.totalWeight}}</td>
+    <td>{{vm.totalObject.totalLunch.totalEnergy}}</td>
+    <td>{{vm.totalObject.totalLunch.averagelEnergy100g}}</td>
+  </tr>
+  <tr>
+    <td>{{vm.categories[3]}}</td>
+    <td>{{vm.totalObject.totalDiner.nbItems}}</td>
+    <td>{{vm.totalObject.totalDiner.totalWeight}}</td>
+    <td>{{vm.totalObject.totalDiner.totalEnergy}}</td>
+    <td>{{vm.totalObject.totalDiner.averagelEnergy100g}}</td>
+  </tr>
+  <tr>
+    <td>ALL</td>
+    <td>{{vm.totalObject.totalAll.nbItems}}</td>
+    <td>{{vm.totalObject.totalAll.totalWeight}}</td>
+    <td>{{vm.totalObject.totalAll.totalEnergy}}</td>
+    <td>{{vm.totalObject.totalAll.averagelEnergy100g}}</td>
+  </tr>
+  </tbody>
+
+</table>

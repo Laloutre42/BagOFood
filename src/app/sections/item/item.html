@@ -40,8 +40,9 @@
           <tr ng-repeat="item in $data">
             <td sortable="'category'" data-title="'Category'">{{item.category}}</td>
             <td sortable="'name'" data-title="'Name'">{{item.name}}</td>
-            <td sortable="'energyFor100'" data-title="'Energy for 100g'">{{item.energyFor100}}</td>
-            <td sortable="'weight'" data-title="'Weight'">{{item.weight}}</td>
+            <td sortable="'energyFor100'" data-title="'Energy (kcal/100g)'">{{item.energyFor100}}</td>
+            <td sortable="'weight'" data-title="'Weight (g)'">{{item.weight}}</td>
+            <td sortable="'energy'" data-title="'Energy (kcal)'">{{item.weight * item.energyFor100 / 100}}</td>
             <td data-title="'Catalog'">{{item.catalog}}</td>
             <td class="twelvePercentWidthRow" align="center">
               <button ng-click="vm.addItem(item)" type="button" class="edit btn btn-default btn-sm">

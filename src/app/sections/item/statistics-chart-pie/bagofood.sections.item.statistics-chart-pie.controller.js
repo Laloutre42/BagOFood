@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('bagofood.sections.item.statistics-chart-pie.controller', [])
-  .controller('ItemsListStatisticsChartPieController', function ($stateParams) {
+  .controller('ItemsListStatisticsChartPieController', function ($log, $scope) {
 
     var vm = this;
-    vm.foodList = $stateParams.foodList;
-
+    vm.foodList = $scope.$parent.vm.foodList;
   });
