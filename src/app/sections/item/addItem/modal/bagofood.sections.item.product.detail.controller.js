@@ -11,8 +11,4 @@ angular.module('bagofood.sections.item.product.detail.controller', [])
       $modalInstance.close();
     };
 
-    // Select product
-    $scope.select = function () {
-      $modalInstance.close($scope.product);
-    };
   });

@@ -27,8 +27,8 @@
   background-color: inherit;
 }
 
-// Click cursor on foodlist rox
-.foodListRowClick {
+// Click cursor row
+.rowClick {
   cursor: pointer;
 }
 
@@ -38,6 +38,11 @@
 
 .v-middle > tbody > tr > td {
   vertical-align: middle;
+}
+
+// Fix nav bar padding
+body {
+  padding-top: 70px;
 }
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject

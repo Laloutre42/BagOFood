@@ -8,13 +8,14 @@ angular.module('bagofood.sections.item.controller',
     'bagofood.sections.item.statistics-chart-histo.controller',
     'bagofood.sections.item.statistics-chart-pie.controller'
   ])
-  .controller('ItemsListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService) {
+  .controller('ItemsListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, ProductModalDetailsService) {
 
     var vm = this;
     vm.radioViewTypeSelection = 0;
     vm.foodList = {};
     vm.addItem = addItem;
     vm.removeItem = removeItem;
+    vm.searchProductByIdAndOpenModalForDetailProduct = ProductModalDetailsService.searchProductByIdAndOpenModalForDetailProduct;
 
     // ng table to display data
     vm.itemTable = new ngTableParams({

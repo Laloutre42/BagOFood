@@ -3,17 +3,17 @@
   <label><h4>{{vm.foodList.name}}</h4></label>
 
   <div class="pull-right">
-    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="0" ui-sref='main.itemslist.description'>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="0" ui-sref='main.itemslist.description' tooltip="Description">
+      <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
     </label>
-    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="1" ui-sref='main.itemslist.statisticsCharHisto'>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="1" ui-sref='main.itemslist.statisticsCharHisto' tooltip="Statistics histogram chart">
+      <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
     </label>
-    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="2" ui-sref='main.itemslist.statisticsChartPie'>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="2" ui-sref='main.itemslist.statisticsChartPie' tooltip="Statistics pie chart">
+      <span class="glyphicon glyphicon-adjust" aria-hidden="true"></span>
     </label>
-    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="3" ui-sref='main.itemslist.statisticsTable'>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <label class="btn btn-primary" ng-model="vm.radioViewTypeSelection" btn-radio="3" ui-sref='main.itemslist.statisticsTable' tooltip="Statistics table">
+      <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
     </label>
   </div>
 </div>
@@ -23,32 +23,37 @@
   <div ui-view></div>
 </div>
 
-  <!--Items-->
+<!--Items-->
 <br>
 <div class="row">
   <div class="panel panel-default">
 
     <div class="panel-heading clearfix">
       <h4 class="panel-title pull-left">FoodList items</h4>
-      <button ng-click="vm.addItem()" class="btn btn-default pull-right">Add a new item</button>
+      <button ng-click="vm.addItem()" class="btn btn-primary pull-right">Add a new item</button>
     </div>
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table ng-table="vm.itemTable" class="table table-condensed row-border table-hover v-middle">
+        <table ng-table="vm.itemTable" class="table table-condensed row-border v-middle">
           <tbody>
           <tr ng-repeat="item in $data">
             <td sortable="'category'" data-title="'Category'">{{item.category}}</td>
             <td sortable="'name'" data-title="'Name'">{{item.name}}</td>
             <td sortable="'energyFor100'" data-title="'Energy (kcal/100g)'">{{item.energyFor100}}</td>
             <td sortable="'weight'" data-title="'Weight (g)'">{{item.weight}}</td>
-            <td sortable="'energy'" data-title="'Energy (kcal)'">{{item.weight * item.energyFor100 / 100}}</td>
-            <td data-title="'Catalog'">{{item.catalog}}</td>
+            <td sortable="'energy'" data-title="'Energy (kcal)'">{{(item.weight * item.energyFor100 / 100).toFixed(2)}}</td>
+            <td align="center" data-title="'Catalog'">
+              <button ng-click="vm.searchProductByIdAndOpenModalForDetailProduct(item.productId)" type="button" class="edit btn btn-default btn-sm" tooltip="Product details"
+                      ng-disabled="item.productId === null || item.productId === ''">
+                {{item.catalog}}
+              </button>
+            </td>
             <td class="twelvePercentWidthRow" align="center">
-              <button ng-click="vm.addItem(item)" type="button" class="edit btn btn-default btn-sm">
+              <button ng-click="vm.addItem(item)" type="button" class="edit btn btn-default btn-sm" tooltip="Edit item">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
-              <button ng-click="vm.removeItem(item)" type="button" class="remove btn btn-default btn-sm">
+              <button ng-click="vm.removeItem(item)" type="button" class="remove btn btn-default btn-sm" tooltip="Delete item">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </td>

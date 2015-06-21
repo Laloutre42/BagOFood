@@ -3,7 +3,7 @@
 
     <div class="panel-heading clearfix">
       <h4 class="panel-title pull-left panel-title-list" >Food lists</h4>
-      <button ng-click="vm.addFoodList()" class="btn btn-default pull-right">Add a new list</button>
+      <button ng-click="vm.addFoodList()" class="btn btn-primary pull-right">Add a new list</button>
     </div>
 
     <div class="panel-body">
@@ -11,14 +11,14 @@
         <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover v-middle">
           <tbody>
           <tr ng-repeat="foodList in $data">
-            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'author'" data-title="'Author'">{{foodList.user.name}}</td>
-            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'name'" data-title="'Name'">{{foodList.name}}</td>
-            <td class="foodListRowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'description'" data-title="'Description'">{{foodList.description}}</td>
+            <td class="rowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'author'" data-title="'Author'">{{foodList.user.name}}</td>
+            <td class="rowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'name'" data-title="'Name'">{{foodList.name}}</td>
+            <td class="rowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'description'" data-title="'Description'">{{foodList.description}}</td>
             <td class="twelvePercentWidthRow" align="center">
-              <button ng-click="vm.addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm">
+              <button ng-click="vm.addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm" tooltip="Edit foodlist">
                 <span class="glyphicon glyphicon-pencil"></span>
               </button>
-              <button ng-click="vm.removeFoodList(foodList)" type="button" class="remove btn btn-default btn-sm">
+              <button ng-click="vm.removeFoodList(foodList)" type="button" class="remove btn btn-default btn-sm" tooltip="Delete foodlist">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </td>

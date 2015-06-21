@@ -2,4 +2,10 @@
 
 angular.module('bagofood.core.constant', [])
   .constant('ENV', {name: 'development', apiEndpoint: 'http://localhost:8080'})
-  .constant('CONST', {itemCategories: ['BREAKFAST', 'SNACK', 'LUNCH', 'DINER']});
+  .constant('CONST', {
+    itemCategories: ['Breakfast', 'Snack', 'Lunch', 'Diner'],
+    catalog: {
+      CIQUAL_2012: 'Ciqual 2012',
+      CUSTOM: 'Custom'
+    }
+  });

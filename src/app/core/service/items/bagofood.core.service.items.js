@@ -62,7 +62,7 @@ angular.module('bagofood.core.service.items', [])
       total.totalEnergy += (item.weight * item.energyFor100 / 100);
       total.totalEnergy100g += item.energyFor100;
       total.nbItems++;
-      total.averagelEnergy100g += (total.totalEnergy100g / total.nbItems);
+      total.averagelEnergy100g = (total.totalEnergy100g / total.nbItems);
     }
 
     function roundTotalObject(total) {
