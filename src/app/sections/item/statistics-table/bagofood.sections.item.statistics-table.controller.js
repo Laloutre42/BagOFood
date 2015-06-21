@@ -7,6 +7,5 @@ angular.module('bagofood.sections.item.statistics-table.controller', [])
     vm.foodList = $scope.$parent.vm.foodList;
     vm.totalObject = ItemsService.buildDataFromFoodList(vm.foodList);
     vm.categories = CONST.itemCategories;
-    $log.info(vm.totalObject);
 
   });

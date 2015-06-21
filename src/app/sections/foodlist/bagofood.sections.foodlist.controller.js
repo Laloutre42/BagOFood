@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.foodlist.add.controller'])
-  .controller('FoodListController', function ($log, $stateParams, $state, ngTableParams, FoodListService) {
+  .controller('FoodListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService) {
 
     var vm = this;
     vm.addFoodList = addFoodList;
@@ -25,12 +25,12 @@ angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.food
     };
 
     // Navigate to the foodlist detail (item list)
-    function navigateToDetailFoodList(foodList){
-      $state.go('main.itemslist',{foodListId: foodList.id});
+    function navigateToDetailFoodList(foodList) {
+      $state.go('main.itemslist', {foodListId: foodList.id});
     };
 
     function removeFoodList(foodList) {
-      FoodListService.delete({'id': foodList.id}).$promise.then(function(){
+      FoodListService.delete({'id': foodList.id}).$promise.then(function () {
         vm.foodlistTable.reload();
       });
     };
@@ -48,8 +48,10 @@ angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.food
 
       getFoodListParam.$promise.then(function (data) {
         $log.debug('[getAllFoodList] length is ', data.length);
-        $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-        params.total(data.length);
+
+        var orderedData = params.sorting() ? $filter('orderBy')(data, vm.foodlistTable.orderBy()) : data;
+        $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+        params.total(orderedData.length);
       });
     }
 

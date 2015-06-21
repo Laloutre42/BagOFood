@@ -12,8 +12,8 @@ angular.module('bagofood', [
   'ngTable',
   // Ui
   'ui.bootstrap',
-  //Char with n3-line-chart build with d3 for angular
-  'n3-line-chart',
+  //Char with highcharts-ng build with highcharts for angular
+  'highcharts-ng',
   // My app
   'bagofood.sections',
   'bagofood.route',
