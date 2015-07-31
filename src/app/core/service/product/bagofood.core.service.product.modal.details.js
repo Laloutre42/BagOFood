@@ -10,7 +10,7 @@ angular.module('bagofood.core.service.product.modal.details', [])
     var ProductModalDetailsService = {
       openModalForDetailProduct: openModalForDetailProduct,
       searchProductByIdAndOpenModalForDetailProduct: searchProductByIdAndOpenModalForDetailProduct
-    }
+    };
 
     /**
      * Open a modal to see details for a product
@@ -28,7 +28,7 @@ angular.module('bagofood.core.service.product.modal.details', [])
           }
         }
       });
-    };
+    }
 
     /**
      * Search a product by product Id and open modal to see details if it exists
@@ -45,7 +45,7 @@ angular.module('bagofood.core.service.product.modal.details', [])
             $log.error('Error searchProductByIdAndOpenModalForDetailProduct: ', reason);
           })
       }
-    };
+    }
 
     return ProductModalDetailsService;
   });
