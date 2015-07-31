@@ -1,14 +1,15 @@
 'use strict';
 
-angular.module('bagofood.route', ['ui.router'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+angular.module('bagofood.route', ['ui.router', 'bagofood.core.service.head'])
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
       .state('main', {
         templateUrl: 'app/sections/main/main.html'
       })
       .state('main.home', {
         url: '/',
-        templateUrl: 'app/sections/home/home.html'
+        templateUrl: 'app/components/authentification/authentification.html',
+        controller: 'AuthentificationController as vm'
       })
 
       // Foodlist
@@ -57,5 +58,7 @@ angular.module('bagofood.route', ['ui.router'])
     ;
 
     $urlRouterProvider.otherwise('/');
+
+    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   })
 ;

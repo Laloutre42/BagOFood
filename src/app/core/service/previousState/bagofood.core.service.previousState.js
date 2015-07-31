@@ -1,23 +1,23 @@
 'use strict';
 
 angular.module('bagofood.core.service.previousState', [])
-  .service("$previousState", function ($rootScope, $state) {
+  .service('$previousState', function ($rootScope, $state) {
     var previous = null;
     var memos = {};
 
     var lastPrevious = null;
 
-    $rootScope.$on("$stateChangeStart", function (evt, toState, toStateParams, fromState, fromStateParams) {
+    $rootScope.$on('$stateChangeStart', function (evt, toState, toStateParams, fromState, fromStateParams) {
       lastPrevious = previous;
       previous = {state: fromState, params: fromStateParams};
     });
 
-    $rootScope.$on("$stateChangeError", function () {
+    $rootScope.$on('$stateChangeError', function () {
       previous = lastPrevious;
       lastPrevious = null;
     });
 
-    $rootScope.$on("$stateChangeSuccess", function () {
+    $rootScope.$on('$stateChangeSuccess', function () {
       lastPrevious = null;
     });
 
@@ -38,6 +38,6 @@ angular.module('bagofood.core.service.previousState', [])
   });
 
 angular.module('bagofood.core.service.previousState').run(['$previousState', function ($previousState) {
-  "use strict";
+  'use strict';
   // Inject in .run so it can register $rootScope.$on.
 }]);

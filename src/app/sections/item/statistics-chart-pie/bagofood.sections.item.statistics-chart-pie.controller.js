@@ -26,27 +26,27 @@ angular.module('bagofood.sections.item.statistics-chart-pie.controller', [])
         {
           type: 'pie',
           name: 'Total weight (g)',
-          center: ["25%", "50%"],
+          center: ['25%', '50%'],
           showInLegend: true,
           data: []
         },
         {
           type: 'pie',
           name: 'Total energy (kcal)',
-          center: ["75%", "50%"],
+          center: ['75%', '50%'],
           showInLegend: false,
           data: []
         }
       ],
       title: {
-        text: "Total weight / Total energy"
+        text: 'Total weight / Total energy'
       },
       legend: {
         enabled: true
       },
       plotOptions: {
         pie: {
-          size: "100%",
+          size: '100%',
           dataLabels: {
             enabled: false
           }

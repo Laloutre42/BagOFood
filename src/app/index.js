@@ -16,7 +16,7 @@ angular.module('bagofood', [
   'highcharts-ng',
   // My app
   'bagofood.sections',
-  'bagofood.route',
   'bagofood.components',
-  'bagofood.core'
+  'bagofood.core',
+  'bagofood.route'
 ]);
