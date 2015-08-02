@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+/* global malarkey:false, toastr:false, moment:false */
 angular.module('bagofood.core.constant', [])
 
   .constant('malarkey', malarkey)
@@ -29,6 +30,6 @@ angular.module('bagofood.core.constant', [])
     admin: 'ADMIN',
     user: 'USER',
     guest: 'GUEST'
-  })
+  });
 
 })();
