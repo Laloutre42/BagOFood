@@ -9,8 +9,8 @@
       <input name="name" type="text" class="form-control" placeholder="Name" ng-model="vm.credentials.name" required maxlength="255">
 
       <div ng-messages="loginForm.name.$error" ng-if='loginForm.name.$dirty' class="error">
-        <div ng-message="required" ng-data="Name is required"></div>
-        <div ng-message="maxlength" ng-data="Name is too long"></div>
+        <div ng-message="required"><span>Name is required</span></div>
+        <div ng-message="maxlength"><span>Name is too long</span></div>
       </div>
 
     </div>
@@ -23,11 +23,11 @@
 
     <div class="col-sm-10" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
 
-      <input name="name" type="password" class="form-control" placeholder="Password" ng-model="vm.credentials.password" required maxlength="50">
+      <input name="password" type="password" class="form-control" placeholder="Password" ng-model="vm.credentials.password" required maxlength="50">
 
       <div ng-messages="loginForm.password.$error" ng-if='loginForm.password.$dirty' class="error">
-        <div ng-message="required" >Password is required</div>
-        <div ng-message="maxlength" >Password is too long</div>
+        <div ng-message="required"><span>Password is required</span></div>
+        <div ng-message="maxlength"><span>Password is too long</span></div>
       </div>
 
     </div>
