@@ -1,4 +1,5 @@
-'use strict';
+(function() {
+  'use strict';
 
 angular.module('bagofood.core.service.foodlist', [])
   .factory('FoodListService', function ($resource, ENV) {
@@ -33,3 +34,4 @@ angular.module('bagofood.core.service.foodlist', [])
       stripTrailingSlashes: false
     });
   });
+})();  

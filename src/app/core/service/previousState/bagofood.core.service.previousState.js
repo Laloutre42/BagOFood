@@ -1,4 +1,5 @@
-'use strict';
+(function() {
+  'use strict';
 
 angular.module('bagofood.core.service.previousState', [])
   .service('$previousState', function ($rootScope, $state) {
@@ -27,7 +28,7 @@ angular.module('bagofood.core.service.previousState', [])
       },
       go: function (memoName) {
         var to = $previousState.get(memoName);
-        return $state.go(to.state, to.params)
+        return $state.go(to.state, to.params);
       },
       memo: function (memoName) {
         memos[memoName] = previous;
@@ -37,7 +38,7 @@ angular.module('bagofood.core.service.previousState', [])
     return $previousState;
   });
 
-angular.module('bagofood.core.service.previousState').run(['$previousState', function ($previousState) {
-  'use strict';
-  // Inject in .run so it can register $rootScope.$on.
-}]);
+  angular.module('bagofood.core.service.previousState').run(['$previousState', function ($previousState) {
+    // Inject in .run so it can register $rootScope.$on.
+  }]);
+})();

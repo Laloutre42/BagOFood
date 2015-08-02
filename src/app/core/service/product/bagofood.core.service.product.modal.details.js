@@ -1,4 +1,5 @@
-'use strict';
+(function() {
+  'use strict';
 
 angular.module('bagofood.core.service.product.modal.details', [])
   .service('ProductModalDetailsService', function ($modal, $log, ProductService) {
@@ -49,3 +50,4 @@ angular.module('bagofood.core.service.product.modal.details', [])
 
     return ProductModalDetailsService;
   });
+})();

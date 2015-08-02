@@ -1,4 +1,5 @@
-'use strict';
+(function() {
+  'use strict';
 
 
 angular.module('bagofood.sections.item.product.detail.controller', [])
@@ -12,3 +13,4 @@ angular.module('bagofood.sections.item.product.detail.controller', [])
     };
 
   });
+})();
