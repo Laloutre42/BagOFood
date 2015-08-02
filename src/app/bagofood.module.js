@@ -1,6 +1,7 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('bagofood', [
+angular.module('bagOfoodGulp', [
   // Ng
   'ngAnimate',
   'ngCookies',
@@ -12,11 +13,14 @@ angular.module('bagofood', [
   'ngTable',
   // Ui
   'ui.bootstrap',
+  'ui.router',
   //Char with highcharts-ng build with highcharts for angular
   'highcharts-ng',
   // My app
   'bagofood.sections',
   'bagofood.components',
   'bagofood.core',
-  'bagofood.route'
+  'bagofood.route',
+  'bagofood.config'
 ]);
+})();

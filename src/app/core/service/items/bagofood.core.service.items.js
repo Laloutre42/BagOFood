@@ -1,4 +1,5 @@
-'use strict';
+(function() {
+  'use strict';
 
 angular.module('bagofood.core.service.items', [])
   .factory('ItemsService', function ($log, CONST) {
@@ -73,5 +74,5 @@ angular.module('bagofood.core.service.items', [])
     }
 
     return ItemsService;
-  })
-;
+  });
+})();
