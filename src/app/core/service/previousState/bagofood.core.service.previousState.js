@@ -38,7 +38,7 @@ angular.module('bagofood.core.service.previousState', [])
     return $previousState;
   });
 
-  angular.module('bagofood.core.service.previousState').run(['$previousState', function ($previousState) {
+  angular.module('bagofood.core.service.previousState').run(['$previousState', function () {
     // Inject in .run so it can register $rootScope.$on.
   }]);
 })();

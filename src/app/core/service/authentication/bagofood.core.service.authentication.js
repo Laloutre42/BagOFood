@@ -22,8 +22,9 @@
           if (!angular.isArray(authorizedRoles)) {
             authorizedRoles = [authorizedRoles];
           }
-          return ((AuthenticationService.isAuthenticated() && authorizedRoles.indexOf(SessionService.userRole) !== -1)
-          || (authorizedRoles.indexOf(USER_ROLES.guest) !== -1) || (authorizedRoles.indexOf(USER_ROLES.all) !== -1));
+          return ((AuthenticationService.isAuthenticated() && authorizedRoles.indexOf(SessionService.userRole) !== -1) ||
+            (authorizedRoles.indexOf(USER_ROLES.guest) !== -1) ||
+            (authorizedRoles.indexOf(USER_ROLES.all) !== -1));
         },
 
         signUp: function (credentials) {
