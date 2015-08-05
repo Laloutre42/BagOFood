@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.components.navbar.directive', [])
-    .directive('navBarDirective', function () {
+    .directive('navBarDirective', function (AuthenticationService) {
 
       var directive = {
         restrict: 'E',
@@ -28,6 +28,7 @@
         vm.relativeDate = moment(vm.creationDate).fromNow();
         vm.openModalForSignIn = openModalForSignIn;
         vm.openModalForSignUp = openModalForSignUp;
+        vm.logOut = logOut;
 
         function openModalForSignIn() {
 
@@ -47,6 +48,10 @@
             controller: 'SignUpModalController',
             size: 'md'
           });
+        }
+
+        function logOut(){
+          AuthenticationService.logOut();
         }
 
       }

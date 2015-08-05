@@ -15,7 +15,7 @@
 
       return directive;
 
-      function AuthenticationLoginController($rootScope, $log, AUTH_EVENTS, AuthenticationService) {
+      function AuthenticationLoginController($rootScope, AuthenticationService) {
         var vm = this;
 
         vm.login = login;
@@ -27,14 +27,7 @@
         $rootScope.currentUser = null;
 
         function login(credentials) {
-          AuthenticationService.login(credentials).then(
-            function (user) {
-              $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-              $rootScope.currentUser = user;
-            },
-            function () {
-              $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-            });
+          AuthenticationService.login(credentials);
         }
 
       }
