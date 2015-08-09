@@ -17,13 +17,14 @@
 
       return directive;
 
-      function NavbarController($rootScope, moment, $log, $modal) {
+      function NavbarController($rootScope, moment, $log, $modal, SessionService) {
         var vm = this;
 
-        $rootScope.$watch('currentUser', function (currentUser) {
-          vm.user = currentUser;
+        $rootScope.$watch('SessionService.getUser()', function (currentUser) {
+          vm.user = SessionService.getUser();
           $log.debug("[NavbarController] User is ", vm.user);
         });
+
 
         vm.relativeDate = moment(vm.creationDate).fromNow();
         vm.openModalForSignIn = openModalForSignIn;
