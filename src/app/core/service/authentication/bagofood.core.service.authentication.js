@@ -50,7 +50,7 @@
           if (!angular.isArray(authorizedRoles)) {
             authorizedRoles = [authorizedRoles];
           }
-          return ((AuthenticationService.isAuthenticated() && authorizedRoles.indexOf(SessionService.getUser().userRole) !== -1) ||
+          return ((AuthenticationService.isAuthenticated() && authorizedRoles.indexOf(SessionService.getUser().role) !== -1) ||
           (authorizedRoles.indexOf(USER_ROLES.guest) !== -1) ||
           (authorizedRoles.indexOf(USER_ROLES.all) !== -1));
         },
