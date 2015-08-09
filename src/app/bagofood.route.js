@@ -19,7 +19,7 @@
           templateUrl: 'app/sections/foodlist/foodlist.html',
           controller: 'FoodListController as vm',
           data: {
-            authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
+            authorizedRoles: [USER_ROLES.admin, USER_ROLES.user]
           }
         })
         .state('main.modal', {

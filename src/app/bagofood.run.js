@@ -8,6 +8,9 @@
   /** @ngInject */
   function runBlock($log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService) {
 
+    // Check authentication on server side to see if user is logged in
+    AuthenticationService.authenticationCheck();
+
     $rootScope.$on('$stateChangeStart', function (event, next) {
 
       // If no roles ares specified, default to all
