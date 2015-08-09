@@ -5,28 +5,28 @@
     .service('SessionService', function () {
 
       this.user = {
-        userId: null,
-        userName: null,
-        userRole: null,
-        userEmail: null
+        id: null,
+        name: null,
+        role: null,
+        email: null
       };
 
-      this.create = function (userId, userName, userRole, userEmail) {
-        this.user.userId = userId;
-        this.user.userName = userName;
-        this.user.userRole = userRole;
-        this.user.userEmail = userEmail;
+      this.create = function (id, name, role, email) {
+        this.user.id = id;
+        this.user.name = name;
+        this.user.role = role;
+        this.user.userEmail = email;
       };
 
       this.destroy = function () {
-        this.user.userId = null;
-        this.user.userName = null;
-        this.user.userRole = null;
-        this.user.userEmail = null;
+        this.user.id = null;
+        this.user.name = null;
+        this.user.role = null;
+        this.user.email = null;
       };
 
       this.getUser = function () {
-        return (this.user.userId !== null) ? this.user : null;
+        return (this.user.id !== null) ? this.user : null;
       }
 
     });

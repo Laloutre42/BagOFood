@@ -2,12 +2,13 @@
   'use strict';
 
   angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.foodlist.add.controller'])
-    .controller('FoodListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService) {
+    .controller('FoodListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, SessionService) {
 
       var vm = this;
       vm.addFoodList = addFoodList;
       vm.navigateToDetailFoodList = navigateToDetailFoodList;
       vm.removeFoodList = removeFoodList;
+      vm.user = SessionService.getUser();
 
       // ng table to display data
       vm.foodlistTable = new ngTableParams({

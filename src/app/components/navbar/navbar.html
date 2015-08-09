@@ -21,7 +21,8 @@
         <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignIn()">Log in</button></li>-->
         <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignUp()">Sign up</button></li>-->
         <!--<li><button class="btn btn-primary" ng-click="vm.logOut()">Log out</button></li>-->
-        <li ng-if="vm.user">{{vm.user.userName}}</li>
+        <li ng-if="vm.user">{{vm.user.name}}</li>
+        <li ng-if="vm.user"><form method="get" action="/api/logout"><button class="btn btn-primary" type="submit">Log out</button></form></li>
       </ul>
     </div>
   </div>
