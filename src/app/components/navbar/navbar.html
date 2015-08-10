@@ -18,6 +18,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li ng-if="!vm.user"><form method="get" action="/auth/facebook"><button class="btn btn-primary" type="submit">Log in with FB</button></form></li>
+        <li ng-if="!vm.user"><form method="get" action="/auth/google"><button class="btn btn-primary" type="submit">Log in with Google</button></form></li>
         <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignIn()">Log in</button></li>-->
         <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignUp()">Sign up</button></li>-->
         <!--<li><button class="btn btn-primary" ng-click="vm.logOut()">Log out</button></li>-->
