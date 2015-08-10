@@ -15,7 +15,7 @@
         this.user.id = id;
         this.user.name = name;
         this.user.role = role;
-        this.user.userEmail = email;
+        this.user.email = email;
       };
 
       this.destroy = function () {

@@ -20,7 +20,7 @@
       function NavbarController($rootScope, moment, $log, $modal, SessionService) {
         var vm = this;
 
-        $rootScope.$watch('SessionService.getUser()', function (currentUser) {
+        $rootScope.$watch('SessionService.getUser()', function () {
           vm.user = SessionService.getUser();
           $log.debug("[NavbarController] User is ", vm.user);
         });
