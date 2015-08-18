@@ -59,7 +59,7 @@
         logOut: function () {
 
           $http
-            .post('/api/logout')
+            .post(ENV.apiEndpoint + '/logout')
             .then(
             function (response) {
               $log.error("[AuthenticationService][logOut] response ok ", response);
@@ -73,7 +73,7 @@
 
         authenticationCheck: function () {
           $http
-            .get('/api/authenticationCheck')
+            .get(ENV.apiEndpoint + 'authenticationCheck')
             .then(
             function (response) {
               $log.debug("[AuthenticationService][authenticationCheck] Authenticated OK");
