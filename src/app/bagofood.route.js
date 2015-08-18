@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.route', [])
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, USER_ROLES) {
+    .config(['$stateProvider','$urlRouterProvider', '$httpProvider', 'USER_ROLES', function ($stateProvider, $urlRouterProvider, $httpProvider, USER_ROLES) {
       $stateProvider
         .state('main', {
           templateUrl: 'app/sections/main/main.html',
@@ -67,5 +67,5 @@
       $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
       $urlRouterProvider.otherwise('/');
-    });
+    }]);
 })();

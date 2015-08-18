@@ -3,7 +3,7 @@
 
   angular
     .module('bagOfoodGulp')
-    .run(runBlock);
+    .run(['$log', '$rootScope', 'AUTH_EVENTS', 'USER_ROLES', 'AuthenticationService', runBlock]);
 
   /** @ngInject */
   function runBlock($log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService) {

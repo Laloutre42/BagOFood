@@ -27,7 +27,7 @@
 
       this.getUser = function () {
         return (this.user.id !== null) ? this.user : null;
-      }
+      };
 
     });
 })();

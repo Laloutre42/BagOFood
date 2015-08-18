@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.config', [])
-    .config(function ($logProvider, $httpProvider, toastr) {
+    .config(['$logProvider', '$httpProvider', 'toastr', function ($logProvider, $httpProvider, toastr) {
 
       // Enable log
       $logProvider.debugEnabled(true);
@@ -21,6 +21,6 @@
         }
       ]);
 
-    });
+    }]);
 
 })();

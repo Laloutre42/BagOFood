@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.components.navbar.directive', [])
-    .directive('navBarDirective', function (AuthenticationService) {
+    .directive('navBarDirective', ['AuthenticationService', function (AuthenticationService) {
 
       var directive = {
         restrict: 'E',
@@ -10,7 +10,7 @@
         scope: {
           creationDate: '='
         },
-        controller: NavbarController,
+        controller: ['$rootScope', 'moment', '$log', '$modal', 'SessionService', NavbarController],
         controllerAs: 'vm',
         bindToController: true
       };
@@ -57,7 +57,7 @@
 
       }
 
-    });
+    }]);
 
 })();
 

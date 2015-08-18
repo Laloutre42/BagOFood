@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.core.service.authenticationInterceptor', [])
-    .factory('AuthenticationInterceptorService', function ($rootScope, $q, AUTH_EVENTS) {
+    .factory('AuthenticationInterceptorService', ['$rootScope', '$q', 'AUTH_EVENTS', function ($rootScope, $q, AUTH_EVENTS) {
 
       return {
         responseError: function (response) {
@@ -16,5 +16,5 @@
         }
       };
 
-    });
+    }]);
 })();
