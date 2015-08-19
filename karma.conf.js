@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD
 var path = require('path');
 var conf = require('./gulp/conf');
 
@@ -40,13 +41,28 @@ module.exports = function(config) {
     ngHtml2JsPreprocessor: {
       stripPrefix: 'src/',
       moduleName: 'bagOfoodGulp'
+=======
+module.exports = function(config) {
+
+  var configuration = {
+    autoWatch : false,
+
+    frameworks: ['jasmine'],
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'gulpAngular'
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
     },
 
     browsers : ['PhantomJS'],
 
     plugins : [
       'karma-phantomjs-launcher',
+<<<<<<< HEAD
       'karma-angular-filesort',
+=======
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
     ],

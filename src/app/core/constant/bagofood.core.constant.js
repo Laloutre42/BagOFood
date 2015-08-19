@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function() {
   'use strict';
 
@@ -9,12 +10,19 @@ angular.module('bagofood.core.constant', [])
   .constant('moment', moment)
 
   .constant('ENV', {name: 'development', apiEndpoint: '/api'})
+=======
+'use strict';
+
+angular.module('bagofood.core.constant', [])
+  .constant('ENV', {name: 'development', apiEndpoint: 'http://localhost:8080'})
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
   .constant('CONST', {
     itemCategories: ['Breakfast', 'Snack', 'Lunch', 'Diner'],
     catalog: {
       CIQUAL_2012: 'Ciqual 2012',
       CUSTOM: 'Custom'
     }
+<<<<<<< HEAD
   })
 
   .constant('AUTH_EVENTS', {
@@ -33,3 +41,6 @@ angular.module('bagofood.core.constant', [])
   });
 
 })();
+=======
+  });
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d

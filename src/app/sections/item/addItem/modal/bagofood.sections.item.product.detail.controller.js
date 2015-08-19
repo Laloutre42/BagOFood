@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 (function() {
   'use strict';
+=======
+'use strict';
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
 
 
 angular.module('bagofood.sections.item.product.detail.controller', [])
@@ -13,4 +17,7 @@ angular.module('bagofood.sections.item.product.detail.controller', [])
     };
 
   });
+<<<<<<< HEAD
 })();
+=======
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d

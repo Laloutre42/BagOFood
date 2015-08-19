@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 (function() {
   'use strict';
+=======
+'use strict';
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
 
 angular.module('bagofood.core.service.foodlist', [])
   .factory('FoodListService', function ($resource, ENV) {
@@ -34,4 +38,7 @@ angular.module('bagofood.core.service.foodlist', [])
       stripTrailingSlashes: false
     });
   });
+<<<<<<< HEAD
 })();  
+=======
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
