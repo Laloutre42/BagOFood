@@ -59,7 +59,11 @@
           <label class="btn btn-primary" ng-model="vm.item.catalog" btn-radio="'Custom'">Custom</label>
 
           <div ng-messages="addItemForm.catalog.$error" ng-if='addItemForm.catalog.$dirty' class="error">
+<<<<<<< HEAD
             <div ng-message="required" ><span>Catalog is required</span></div>
+=======
+            <div ng-message="required" >Catalog is required</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
           </div>
 
         </div>
@@ -74,7 +78,11 @@
           <input name="name" type="text" class="form-control" placeholder="Name" ng-model="vm.item.name" required ng-readonly="vm.item.catalog === 'Ciqual 2012'">
 
           <div ng-messages="addItemForm.name.$error" ng-if='addItemForm.name.$dirty' class="error">
+<<<<<<< HEAD
             <div ng-message="required" ><span>Name is required</span></div>
+=======
+            <div ng-message="required" >Name is required</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
           </div>
 
         </div>
@@ -89,8 +97,13 @@
           <input name="energyFor100" type="number" class="form-control" placeholder="Energy for 100g" ng-model="vm.item.energyFor100" required ng-readonly="vm.item.catalog === 'Ciqual 2012'">
 
           <div ng-messages="addItemForm.energyFor100.$error" ng-if='addItemForm.energyFor100.$dirty' class="error">
+<<<<<<< HEAD
             <div ng-message="required" ><span>Energy for 100g is required</span></div>
             <div ng-message="number" ><span>A number is required</span></div>
+=======
+            <div ng-message="required" >Energy for 100g is required</div>
+            <div ng-message="number" >A number is required</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
           </div>
 
         </div>
@@ -105,7 +118,11 @@
           <select ng-model="vm.item.category" ng-options="category for category in vm.categories" class="form-control" required></select>
 
           <div ng-messages="addItemForm.category.$error" ng-if='addItemForm.category.$dirty' class="error">
+<<<<<<< HEAD
             <div ng-message="required" ><span>Category is required</span></div>
+=======
+            <div ng-message="required" >Category is required</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
           </div>
 
         </div>
@@ -120,8 +137,13 @@
           <input name="weight" type="number" class="form-control" placeholder="Weight" ng-model="vm.item.weight" required>
 
           <div ng-messages="addItemForm.weight.$error" ng-if='addItemForm.weight.$dirty' class="error">
+<<<<<<< HEAD
             <div ng-message="required" ><span>Weight is required</span></div>
             <div ng-message="number" ><span>A number is required</span></div>
+=======
+            <div ng-message="required" >Weight is required</div>
+            <div ng-message="number" >A number is required</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
           </div>
         </div>
 

@@ -13,8 +13,13 @@
             <input name="name" type="text" class="form-control" placeholder="Name" ng-model="vm.foodList.name" required maxlength="50">
 
             <div ng-messages="addNewFoodListForm.name.$error" ng-if='addNewFoodListForm.name.$dirty' class="error">
+<<<<<<< HEAD
               <div ng-message="required" ><span>Name is required</span></div>
               <div ng-message="maxlength"><span>Name is too long</span></div>
+=======
+              <div ng-message="required" >Name is required</div>
+              <div ng-message="maxlength">Name is too long</div>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
             </div>
 
           </div>

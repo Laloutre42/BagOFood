@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-default navbar-fixed-top">
+=======
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavBarController">
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" ui-sref='main.home'>
@@ -17,6 +21,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
         <li ng-if="!vm.user"><form method="get" action="/auth/facebook"><button class="btn btn-primary" type="submit">Log in with FB</button></form></li>
         <li ng-if="!vm.user"><form method="get" action="/auth/google"><button class="btn btn-primary" type="submit">Log in with Google</button></form></li>
         <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignIn()">Log in</button></li>-->
@@ -24,6 +29,9 @@
         <!--<li><button class="btn btn-primary" ng-click="vm.logOut()">Log out</button></li>-->
         <li ng-if="vm.user">{{vm.user.name}}</li>
         <li ng-if="vm.user"><form method="get" action="/api/logout"><button class="btn btn-primary" type="submit">Log out</button></form></li>
+=======
+        <li>Current date: {{ date | date:'yyyy-MM-dd' }}</li>
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
       </ul>
     </div>
   </div>

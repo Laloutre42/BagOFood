@@ -12,8 +12,11 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
+<<<<<<< HEAD
   
   baseUrl: 'http://localhost:3000',
+=======
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.

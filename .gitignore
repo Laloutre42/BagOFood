@@ -1,6 +1,9 @@
 node_modules/
 bower_components/
 .sass-cache/
+<<<<<<< HEAD
 .idea/
+=======
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
 .tmp/
 dist/

@@ -1,5 +1,9 @@
+<<<<<<< .merge_file_a03648
 (function() {
   'use strict';
+=======
+'use strict';
+>>>>>>> .merge_file_a09080
 
 angular.module('bagofood.core.service.items', [])
   .factory('ItemsService', function ($log, CONST) {
@@ -74,5 +78,10 @@ angular.module('bagofood.core.service.items', [])
     }
 
     return ItemsService;
+<<<<<<< .merge_file_a03648
   });
 })();
+=======
+  })
+;
+>>>>>>> .merge_file_a09080

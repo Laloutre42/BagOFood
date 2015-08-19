@@ -5,11 +5,19 @@
 
 'use strict';
 
+<<<<<<< HEAD
 var MainPage = function() {
   this.jumbEl = element(by.css('.jumbotron'));
   this.h1El = this.jumbEl.element(by.css('h1'));
   this.imgEl = this.jumbEl.element(by.css('img'));
   this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
+=======
+var MainPage = function() { 
+  this.jumbEl = element(by.css('.jumbotron'));
+  this.h1El = this.jumbEl.element(by.css('h1'));
+  this.imgEl = this.jumbEl.element(by.css('img'));
+  this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in awesomeThings'));
+>>>>>>> 8faae942766808f1544e0d552197457ca274c18d
 };
 
 module.exports = new MainPage();
