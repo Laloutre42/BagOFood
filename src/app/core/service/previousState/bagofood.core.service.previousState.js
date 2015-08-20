@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('bagofood.core.service.previousState', [])
-  .service('$previousState', function ($rootScope, $state) {
+  .service(['$rootScope', '$state', function ($rootScope, $state) {
     var previous = null;
     var memos = {};
 
@@ -36,9 +36,9 @@ angular.module('bagofood.core.service.previousState', [])
     };
 
     return $previousState;
-  });
-
-  angular.module('bagofood.core.service.previousState').run(['$previousState', function () {
-    // Inject in .run so it can register $rootScope.$on.
   }]);
+
+/*  angular.module('bagofood.core.service.previousState').run(['$previousState', function () {
+    // Inject in .run so it can register $rootScope.$on.
+  }]);*/
 })();
