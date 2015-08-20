@@ -45,7 +45,7 @@
         }
         else {
           // Todo to change userId
-          getFoodListParam = FoodListService.getFoodListByUserId({'userId': 2});
+          getFoodListParam = FoodListService.getFoodListByUserId({'userId': vm.user.id});
         }
 
         getFoodListParam.$promise.then(function (data) {

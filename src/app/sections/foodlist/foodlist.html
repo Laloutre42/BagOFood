@@ -8,7 +8,7 @@
 
     <div class="panel-body">
       <div class="table-responsive">
-        <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover v-middle">
+        <table ng-table="vm.foodlistTable" class="table table-condensed row-border table-hover v-middle" ng-show="($data.length > 0)">
           <tbody>
           <tr ng-repeat="foodList in $data">
             <td class="rowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'author'" data-title="'Author'">{{foodList.user.name}}</td>
@@ -16,10 +16,10 @@
             <td class="rowClick" ng-click="vm.navigateToDetailFoodList(foodList)" sortable="'description'" data-title="'Description'">{{foodList.description}}</td>
             <td class="twelvePercentWidthRow" align="center" ng-if="foodList.user.id === vm.user.id">
               <button ng-click="vm.addFoodList(foodList)" type="button" class="edit btn btn-default btn-sm" tooltip="Edit foodlist">
-                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="fa fa-pencil"></span>
               </button>
               <button ng-click="vm.removeFoodList(foodList)" type="button" class="remove btn btn-default btn-sm" tooltip="Delete foodlist">
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="fa fa-trash-o"></span>
               </button>
             </td>
           </tr>

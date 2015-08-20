@@ -2,29 +2,36 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" ui-sref='main.home'>
-        <span class="glyphicon glyphicon-home"></span> BagOfOOd
+        <span></span> BagOfOOd
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ui-sref='main.home'>Home</a></li>
-        <li><a ui-sref='main.foodlist({type: "all"})'>All FoodList</a></li>
-        <li><a ui-sref='main.foodlist({type: "mine"})'>My FoodList</a></li>
+        <li><a ui-sref='main.foodlist({type: "all"})'>Browse the lists</a></li>
+        <li ng-if="vm.user"><a ui-sref='main.foodlist({type: "mine"})'>My list</a></li>
         <!--<li><a ui-sref='main.product'>Product</a></li>-->
-        <li><a ui-sref='main.home'>About</a></li>
-        <li><a ui-sref='main.home'>Contact</a></li>
+        <li><a ui-sref='main.about'>About</a></li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-if="!vm.user"><form method="get" action="/auth/facebook"><button class="btn btn-primary" type="submit">Log in with FB</button></form></li>
-        <li ng-if="!vm.user"><form method="get" action="/auth/google"><button class="btn btn-primary" type="submit">Log in with Google</button></form></li>
-        <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignIn()">Log in</button></li>-->
-        <!--<li><button class="btn btn-primary" ng-click="vm.openModalForSignUp()">Sign up</button></li>-->
-        <!--<li><button class="btn btn-primary" ng-click="vm.logOut()">Log out</button></li>-->
-        <li ng-if="vm.user">{{vm.user.name}}</li>
-        <li ng-if="vm.user"><form method="get" action="/api/logout"><button class="btn btn-primary" type="submit">Log out</button></form></li>
-      </ul>
+      <div class="nav navbar-nav navbar-form navbar-right">
+        <div class="form-group" ng-if="!vm.user">
+          <form method="get" action="/auth/facebook">
+            <button class="btn btn-primary" type="submit"><i class="fa fa-facebook"></i> Log in</button>
+          </form>
+        </div>
+        <div class="form-group" ng-if="!vm.user">
+          <form method="get" action="/auth/google">
+            <button class="btn btn-danger" type="submit"><i class="fa fa-google"></i> Log in</button>
+          </form>
+        </div>
+        <div class="form-group" ng-if="vm.user"><b>{{vm.user.name}}</b></div>
+        <div class="form-group" ng-if="vm.user">
+          <form method="get" action="/api/logout">
+            <button class="btn btn-default" type="submit">Log out</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

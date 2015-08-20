@@ -12,6 +12,10 @@
           url: '/',
           templateUrl: 'app/sections/home/home.html'
         })
+        .state('main.about', {
+          url: '/about',
+          templateUrl: 'app/sections/about/about.html'
+        })
 
         // Foodlist
         .state('main.foodlist', {

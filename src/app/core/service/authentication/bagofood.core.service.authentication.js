@@ -71,7 +71,7 @@
         },
 
         authenticationCheck: function () {
-          $http
+          return $http
             .get('/api/authenticationCheck')
             .then(
             function (response) {
