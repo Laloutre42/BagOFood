@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('bagofood.core.service.authentication', [])
-    .factory('AuthenticationService', ['$rootScope', '$cookies', '$log', '$http', 'USER_ROLES', 'AUTH_EVENTS', 'SessionService', 
-      function ($rootScope, $cookies, $log, $http, USER_ROLES, AUTH_EVENTS, SessionService) {
+    .factory('AuthenticationService', ['$rootScope', '$cookies', '$log', '$http', 'USER_ROLES', 'AUTH_EVENTS', 'ENV', 'SessionService',
+      function ($rootScope, $cookies, $log, $http, USER_ROLES, AUTH_EVENTS, ENV, SessionService) {
       var AuthenticationService = {
 
         //login: function (credentials) {
@@ -72,7 +72,7 @@
         },
 
         authenticationCheck: function () {
-          $http
+          return $http
             .get(ENV.apiEndpoint + 'authenticationCheck')
             .then(
             function (response) {
