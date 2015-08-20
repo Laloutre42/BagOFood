@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('bagofood.core.service.foodlist', [])
-  .factory('FoodListService', function ($resource, ENV) {
+  .factory('FoodListService', ['$resource', 'ENV', function ($resource, ENV) {
     return $resource(ENV.apiEndpoint + '/foodlist/:id', {id: '@id'}, {
 
       // Get food list by an author id
@@ -33,5 +33,5 @@ angular.module('bagofood.core.service.foodlist', [])
     }, {
       stripTrailingSlashes: false
     });
-  });
-})();  
+  }]);
+})();

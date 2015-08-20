@@ -73,7 +73,7 @@
 
         authenticationCheck: function () {
           return $http
-            .get(ENV.apiEndpoint + 'authenticationCheck')
+            .get(ENV.apiEndpoint + '/authenticationCheck')
             .then(
             function (response) {
               $log.debug("[AuthenticationService][authenticationCheck] Authenticated OK");

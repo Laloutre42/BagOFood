@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.foodlist.add.controller'])
-    .controller('FoodListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, SessionService) {
+    .controller('FoodListController', ['$log', '$filter', '$stateParams', '$state', 'ngTableParams', 'FoodListService', 'SessionService',
+        function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, SessionService) {
 
       var vm = this;
       vm.addFoodList = addFoodList;
@@ -57,5 +58,5 @@
         });
       }
 
-    });
+    }]);
 })();
