@@ -1,7 +1,7 @@
 {
   "name": "bagOfoodGulp",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {  },
   "scripts": {
     "test": "gulp test"
   },
@@ -47,7 +47,9 @@
     "http-proxy-middleware": "~0.0.5",
     "chalk": "~1.0.0",
     "uglify-save-license": "~0.4.1",
-    "wrench": "~1.5.8"
+    "wrench": "~1.5.8",
+    "gulp-ng-config": "^1.2.1",
+    "yargs": "^3.20.0"
   },
   "engines": {
     "node": ">=0.10.0"

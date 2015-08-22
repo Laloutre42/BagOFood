@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('bagofood.core.service.previousState', [])
-  .service(['$rootScope', '$state', function ($rootScope, $state) {
+  .service('$previousState', ['$rootScope', '$state', function ($rootScope, $state) {
     var previous = null;
     var memos = {};
 
