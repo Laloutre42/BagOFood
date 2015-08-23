@@ -8,6 +8,8 @@ $fa-font-path: "../../bower_components/components-font-awesome/fonts";
 
 @import "../../bower_components/components-font-awesome/scss/font-awesome.scss";
 
+@import "../assets/styles/mixins";
+
 //@import "../../src/assets/styles/boostrap-theme/cyborg/_variables";
 //@import "../../src/assets/styles/boostrap-theme/cyborg/_bootswatch";
 
@@ -63,6 +65,31 @@ $fa-font-path: "../../bower_components/components-font-awesome/fonts";
 // Fix nav bar padding
 body {
   padding-top: 70px;
+}
+
+// show/hide parts of the app during the loading
+html.app-loading {
+  [hidden-when-loading], .hidden-when-loading {
+    display: none !important;
+  }
+}
+
+html:not(.app-loading) {
+  [shown-when-loading], .shown-when-loading {
+    display: none !important;
+  }
+}
+
+#app-loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+
+  .app-loading {
+    @include circleLoader(50px);
+  }
 }
 
 /**

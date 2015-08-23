@@ -3,10 +3,11 @@
 
   angular
     .module('bagOfoodGulp')
-    .run(['$log', '$rootScope', 'AUTH_EVENTS', 'USER_ROLES', 'AuthenticationService', runBlock]);
+    // !! LocaleService is used to get locale (instead with have an undefined, don't remove
+    .run(['$log', '$rootScope', 'AUTH_EVENTS', 'USER_ROLES', 'AuthenticationService', 'LocaleService', runBlock]);
 
   /** @ngInject */
-  function runBlock($log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService) {
+  function runBlock($log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService, LocaleService) {
 
     // Check authentication on server side to see if user is logged in
     AuthenticationService.authenticationCheck().finally(function () {

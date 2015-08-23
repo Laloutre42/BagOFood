@@ -1,0 +1,11 @@
+{
+  "key.bagofood.components.navbar.directive.browse_the_lists": "Voir les listes",
+  "key.bagofood.components.navbar.directive.my_list": "Mes listes",
+  "key.bagofood.components.navbar.directive.about": "A propos",
+  "key.bagofood.components.navbar.directive.log_in": "Connection",
+  "key.bagofood.components.navbar.directive.log_out": "Déconnection",
+
+  "key.bagofood.sections.main.controller.powered_by": "Propulsé par ",
+
+  "key.bagofood.components.languageSelect.directive.language": "Language"
+}

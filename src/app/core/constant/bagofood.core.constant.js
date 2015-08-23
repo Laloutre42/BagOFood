@@ -8,6 +8,15 @@
     .constant('toastr', toastr)
     .constant('moment', moment)
 
+    .constant('LOCALES', {
+      'locales': {
+        'ru_RU': 'Русский',
+        'fr_FR': 'Français',
+        'en_US': 'English'
+      },
+      'preferredLocale': 'en_US'
+    })
+
     .constant('CONST', {
       itemCategories: ['Breakfast', 'Snack', 'Lunch', 'Diner'],
       catalog: {
