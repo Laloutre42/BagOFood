@@ -4,10 +4,10 @@
   angular
     .module('bagOfoodGulp')
     // !! LocaleService is used to get locale (instead with have an undefined, don't remove
-    .run(['$log', '$rootScope', 'AUTH_EVENTS', 'USER_ROLES', 'AuthenticationService', 'LocaleService', runBlock]);
+    .run(['$filter', '$log', '$rootScope', 'AUTH_EVENTS', 'USER_ROLES', 'AuthenticationService', 'LocaleService', runBlock]);
 
   /** @ngInject */
-  function runBlock($log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService, LocaleService) {
+  function runBlock($filter, $log, $rootScope, AUTH_EVENTS, USER_ROLES, AuthenticationService, LocaleService) {
 
     // Check authentication on server side to see if user is logged in
     AuthenticationService.authenticationCheck().finally(function () {
@@ -32,12 +32,12 @@
           if (AuthenticationService.isAuthenticated()) {
             $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
             $log.debug('[runBlock] User is not allowed');
-            toastr.error('Your are not allowed');
+            toastr.error($filter('translate')('key.bagofood.run.your_are_not_allowed'));
           }
           // user is not logged in
           else {
             $log.debug('[runBlock] User is not logged in');
-            toastr.error('Your are not logged in');
+            toastr.error($filter('translate')('key.bagofood.run.your_are_not_logged_in'));
             $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
           }
         }

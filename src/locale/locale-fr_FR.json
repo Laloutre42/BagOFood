@@ -4,8 +4,9 @@
   "key.bagofood.components.navbar.directive.about": "A propos",
   "key.bagofood.components.navbar.directive.log_in": "Connection",
   "key.bagofood.components.navbar.directive.log_out": "Déconnection",
-
+  "key.bagofood.run.your_are_not_allowed": "Vous n'êtes pas autorisé",
+  "key.bagofood.run.your_are_not_logged_in": "Vous n'êtes pas loggué",
   "key.bagofood.sections.main.controller.powered_by": "Propulsé par ",
-
-  "key.bagofood.components.languageSelect.directive.language": "Language"
+  "key.bagofood.components.languageSelect.directive.language": "Language",
+  "key.bagofood.sections.home.optimize_your_food_when_you_are_hicking": "Optimisez votre nourriture en randonnée"
 }
