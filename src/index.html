@@ -1,5 +1,6 @@
 <!doctype html>
-<html ng-app="bagOfoodGulp" ng-strict-di>
+<!--<html ng-app="bagOfoodGulp" ng-strict-di>-->
+<html ng-app="bagOfoodGulp">
   <head>
     <meta charset="utf-8">
     <title>bagOfoodGulp</title>
@@ -24,7 +25,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div id="app-loading-wrapper" shown-when-loading>
+      <div class="app-loading"></div>
+    </div>
+    <div ui-view hidden-when-loading></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

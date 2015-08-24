@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('bagofood.sections.item.statistics-chart-histo.controller', [])
-    .controller('ItemsListStatisticsChartHistoController', function ($log, $scope, Highcharts, CONST, ItemsService) {
+    .controller('ItemsListStatisticsChartHistoController', function ($log, $scope, CONST, ItemsService) {
 
       var vm = this;
       vm.foodList = $scope.$parent.vm.foodList;

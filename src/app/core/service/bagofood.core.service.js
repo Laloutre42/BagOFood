@@ -9,6 +9,7 @@
 	  'bagofood.core.service.items',
 	  'bagofood.core.service.authentication',
     'bagofood.core.service.authenticationInterceptor',
-    'bagofood.core.service.session'
+    'bagofood.core.service.session',
+    'bagofood.core.service.locale'
 	]);
 })();

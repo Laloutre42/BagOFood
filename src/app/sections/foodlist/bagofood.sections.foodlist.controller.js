@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('bagofood.sections.foodlist.controller', ['bagofood.sections.foodlist.add.controller'])
-    .controller('FoodListController', function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, SessionService) {
+    .controller('FoodListController', ['$log', '$filter', '$stateParams', '$state', 'ngTableParams', 'FoodListService', 'SessionService',
+        function ($log, $filter, $stateParams, $state, ngTableParams, FoodListService, SessionService) {
 
       var vm = this;
       vm.addFoodList = addFoodList;
@@ -45,7 +46,7 @@
         }
         else {
           // Todo to change userId
-          getFoodListParam = FoodListService.getFoodListByUserId({'userId': 2});
+          getFoodListParam = FoodListService.getFoodListByUserId({'userId': vm.user.id});
         }
 
         getFoodListParam.$promise.then(function (data) {
@@ -57,5 +58,5 @@
         });
       }
 
-    });
+    }]);
 })();

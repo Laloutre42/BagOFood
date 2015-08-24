@@ -1,0 +1,12 @@
+{
+  "key.bagofood.components.navbar.directive.browse_the_lists": "Browse the lists",
+  "key.bagofood.components.navbar.directive.my_list": "My lists",
+  "key.bagofood.components.navbar.directive.about": "About",
+  "key.bagofood.components.navbar.dire  ctive.log_in": "Log in",
+  "key.bagofood.components.navbar.directive.log_out": "Log out",
+  "key.bagofood.run.your_are_not_allowed": "You are not allowed",
+  "key.bagofood.run.your_are_not_logged_in": "You are not logged in",
+  "key.bagofood.sections.main.controller.powered_by": "Powered by",
+  "key.bagofood.components.languageSelect.directive.language": "Language",
+  "key.bagofood.sections.home.optimize_your_food_when_you_are_hicking": "Optimize your food when you are hicking"
+}
