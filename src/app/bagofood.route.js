@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('bagofood.route', [])
-    .config(['$stateProvider','$urlRouterProvider', '$httpProvider', 'USER_ROLES', function ($stateProvider, $urlRouterProvider, $httpProvider, USER_ROLES) {
+    .config(['$stateProvider','$urlRouterProvider', '$httpProvider', '$locationProvider', 'USER_ROLES', 
+      function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, USER_ROLES) {
       $stateProvider
         .state('main', {
           templateUrl: 'app/sections/main/main.html',
@@ -69,6 +70,9 @@
       Spring Security responds to it by not sending a "WWW-Authenticate" header in a 401 response, and thus the browser will not pop up an authentication dialog
       (which is desirable in our app since we want to control the authentication). */
       $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+
+      // use the HTML5 History API
+      $locationProvider.html5Mode(true);      
 
       $urlRouterProvider.otherwise('/');
     }]);

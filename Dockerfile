@@ -5,7 +5,7 @@ FROM nginx
 MAINTAINER Arnaud Zdziobeck <laloutre42@gmail.com>
 
 # Copy custom configuration file from the current directory
-#COPY nginx.conf /etc/nginx/nginx.conf
+COPY ngninx_conf/nginx.conf /etc/nginx/nginx.conf
 
 # Copy "dist" content to "html"
 COPY dist /usr/share/nginx/html
