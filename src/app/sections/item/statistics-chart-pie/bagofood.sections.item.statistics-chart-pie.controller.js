@@ -13,6 +13,7 @@
         options: {
           //This is the Main Highcharts chart config. Any Highchart options are valid here will be overriden by values specified below.
           chart: {
+            backgroundColor: '#EBEBEB',
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false
@@ -40,7 +41,7 @@
           }
         ],
         title: {
-          text: 'Total weight / Total energy'
+          text: 'Total weight and Total energy'
         },
         legend: {
           enabled: true
