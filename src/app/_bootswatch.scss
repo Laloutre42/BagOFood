@@ -12,6 +12,13 @@
 
 // Tables =====================================================================
 
+.bagofood-table-list > thead > tr > th {
+  border-bottom: none;
+  color: steelblue;
+  font-size: 15px;
+  font-weight: 800;
+}
+
 // Forms ======================================================================
 
 // Navs =======================================================================
@@ -26,4 +33,7 @@
 
 .panel-title-list {
   margin-top: 8px;
+  margin-left: 20px;
+  font-family: fantasy;
+  font-size: 22px;
 }
