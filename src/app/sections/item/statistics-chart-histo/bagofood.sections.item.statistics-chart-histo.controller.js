@@ -13,6 +13,7 @@
         options: {
           //This is the Main Highcharts chart config. Any Highchart options are valid here will be overriden by values specified below.
           chart: {
+            backgroundColor: '#EBEBEB',
             type: 'bar'
           },
           tooltip: {

@@ -53,11 +53,11 @@
 
 input,
 .form-control {
-  @include box-shadow(none);
+  box-shadow: none;
 
   &:focus {
     border-color: $input-border;
-    @include box-shadow(none);
+    box-shadow: none;
   }
 }
 
@@ -152,10 +152,10 @@ input,
 .progress {
   border-radius: 10px;
   background-color: $gray-light;
-  @include box-shadow(none);
+  box-shadow: none;
 
   &-bar {
-    @include box-shadow(none);
+    box-shadow: none;
   }
 }
 
@@ -168,11 +168,11 @@ input,
 }
 
 .well {
-  @include box-shadow(none);
+  box-shadow: none;
 }
 
 .panel {
-  @include box-shadow(none);
+  box-shadow: none;
 
   .panel-heading,
   .panel-title {
