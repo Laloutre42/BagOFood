@@ -35,7 +35,7 @@
       function searchProductByIdAndOpenModalForDetailProduct(productId) {
 
         if (productId !== null && typeof productId !== 'undefined' && productId !== '') {
-          ProductService.get({id: productId}).$promise.then(
+          ProductService.getProductByIdWithDesignation({id: productId}).$promise.then(
             function (data) {
               self.openModalForDetailProduct(data);
             },

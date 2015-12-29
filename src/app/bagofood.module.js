@@ -17,6 +17,11 @@ angular.module('bagOfoodGulp', [
   'ui.bootstrap',
   'ui.router',
 
+  // Ui router extra
+  'ct.ui.router.extras.core',
+  'ct.ui.router.extras.transition',
+  'ct.ui.router.extras.previous',
+
   //Char with highcharts-ng build with highcharts for angular
   'highcharts-ng',
 

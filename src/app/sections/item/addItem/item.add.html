@@ -12,39 +12,44 @@
         </span>
         </div>
         <div ng-show="vm.totalProductsFound > 0">{{vm.totalProductsFound}} product(s) found</div>
-        <div ng-show="vm.totalProductsFound === 0">No product found</div>
+        <div ng-show="vm.totalProductsFound === 0">No
+        product
+        found</div>
       </div>
     </form>
     <br>
 
     <!-- Products Ciqual 2012 list -->
-    <div class="table-responsive" ng-show="vm.totalProductsFound > 0 && vm.item.catalog === 'Ciqual 2012'">
-      <table ng-table="vm.productTable" class="table table-striped table-hover table-condensed table-bordered v-middle">
-        <thead>
-        <tr>
-          <th>Groupe d'aliment (ORIGGPFR)</th>
-          <th>Aliment (ORIGFDNM)</th>
-          <th>Energie (kcal/100g)</th>
-          <th>Details</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="productCiqual2012 in $data" >
-          <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.origgpfr}}</td>
-          <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.origfdnm}}</td>
-          <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.energie_reglement_ue_1169_2011_kcal_100g}}</td>
-          <td align="center">
-            <button ng-click="vm.openModalForDetailProduct(productCiqual2012)" type="button" class="edit btn btn-default btn-sm" tooltip="Product details">
-              <span class="fa fa-list-alt"></span>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="panel panel-default" ng-show="vm.totalProductsFound > 0 && vm.item.catalog === 'Ciqual 2012'">
+      <div class="panel-body">
+        <div class="table-responsive" >
+          <table ng-table="vm.productTable" class="table bagofood-table-list table-condensed row-border v-middle">
+            <thead>
+            <tr>
+              <th>Groupe d'aliment (ORIGGPFR)</th>
+              <th>Aliment (ORIGFDNM)</th>
+              <th>Energie (kcal/100g)</th>
+              <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="productCiqual2012 in $data">
+              <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.origgpfr}}</td>
+              <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.origfdnm}}</td>
+              <td class="rowClick" ng-click="vm.selectProduct(productCiqual2012)">{{productCiqual2012.energie_reglement_ue_1169_2011_kcal_100g}}</td>
+              <td align="center">
+                <button ng-click="vm.openModalForDetailProduct(productCiqual2012)" type="button" class="edit btn btn-default btn-sm" tooltip="Product details">
+                  <span class="fa fa-list-alt"></span>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
 
+        </div>
+      </div>
     </div>
   </div>
-
 
   <div>
     <form name="addItemForm" class="form-horizontal" role="form">
@@ -59,7 +64,7 @@
           <label class="btn btn-primary" ng-model="vm.item.catalog" btn-radio="'Custom'">Custom</label>
 
           <div ng-messages="addItemForm.catalog.$error" ng-if='addItemForm.catalog.$dirty' class="error">
-            <div ng-message="required" ><span>Catalog is required</span></div>
+            <div ng-message="required"><span>Catalog is required</span></div>
           </div>
 
         </div>
@@ -74,7 +79,7 @@
           <input name="name" type="text" class="form-control" placeholder="Name" ng-model="vm.item.name" required ng-readonly="vm.item.catalog === 'Ciqual 2012'">
 
           <div ng-messages="addItemForm.name.$error" ng-if='addItemForm.name.$dirty' class="error">
-            <div ng-message="required" ><span>Name is required</span></div>
+            <div ng-message="required"><span>Name is required</span></div>
           </div>
 
         </div>
@@ -86,11 +91,12 @@
 
         <div class="col-sm-10" ng-class="{'has-error': addItemForm.energyFor100.$invalid && addItemForm.energyFor100.$dirty}">
 
-          <input name="energyFor100" type="number" class="form-control" placeholder="Energy for 100g" ng-model="vm.item.energyFor100" required ng-readonly="vm.item.catalog === 'Ciqual 2012'">
+          <input name="energyFor100" type="number" class="form-control" placeholder="Energy for 100g" ng-model="vm.item.energyFor100" required
+                 ng-readonly="vm.item.catalog === 'Ciqual 2012'">
 
           <div ng-messages="addItemForm.energyFor100.$error" ng-if='addItemForm.energyFor100.$dirty' class="error">
-            <div ng-message="required" ><span>Energy for 100g is required</span></div>
-            <div ng-message="number" ><span>A number is required</span></div>
+            <div ng-message="required"><span>Energy for 100g is required</span></div>
+            <div ng-message="number"><span>A number is required</span></div>
           </div>
 
         </div>
@@ -105,7 +111,7 @@
           <select ng-model="vm.item.category" ng-options="category for category in vm.categories" class="form-control" required></select>
 
           <div ng-messages="addItemForm.category.$error" ng-if='addItemForm.category.$dirty' class="error">
-            <div ng-message="required" ><span>Category is required</span></div>
+            <div ng-message="required"><span>Category is required</span></div>
           </div>
 
         </div>
@@ -120,8 +126,8 @@
           <input name="weight" type="number" class="form-control" placeholder="Weight" ng-model="vm.item.weight" required>
 
           <div ng-messages="addItemForm.weight.$error" ng-if='addItemForm.weight.$dirty' class="error">
-            <div ng-message="required" ><span>Weight is required</span></div>
-            <div ng-message="number" ><span>A number is required</span></div>
+            <div ng-message="required"><span>Weight is required</span></div>
+            <div ng-message="number"><span>A number is required</span></div>
           </div>
         </div>
 
@@ -132,7 +138,7 @@
 
   <div class="pull-right">
     <button type="button" class="btn btn-default" ng-click="vm.back()">Cancel</button>
-    <button validation-submit="addItemForm" type="submit" class="btn btn-primary" ng-click="vm.ok()" ng-disabled="addItemForm.$invalid" >Save changes</button>
+    <button validation-submit="addItemForm" type="submit" class="btn btn-primary" ng-click="vm.ok()" ng-disabled="addItemForm.$invalid">Save changes</button>
   </div>
 </div>
 

@@ -1,47 +1,27 @@
-<table class="table table-condensed row-border v-middle">
-  <thead>
-  <th>Category</th>
-  <th>Items</th>
-  <th>Total weight (g)</th>
-  <th>Total energy (kcal)</th>
-  <th>Average energy (kcal/100g)</th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>{{vm.categories[0]}}</td>
-    <td>{{vm.totalObject.totalBreakfast.nbItems}}</td>
-    <td>{{vm.totalObject.totalBreakfast.totalWeight}}</td>
-    <td>{{vm.totalObject.totalBreakfast.totalEnergy}}</td>
-    <td>{{vm.totalObject.totalBreakfast.averagelEnergy100g}}</td>
-  </tr>
-  <tr>
-    <td>{{vm.categories[1]}}</td>
-    <td>{{vm.totalObject.totalSnack.nbItems}}</td>
-    <td>{{vm.totalObject.totalSnack.totalWeight}}</td>
-    <td>{{vm.totalObject.totalSnack.totalEnergy}}</td>
-    <td>{{vm.totalObject.totalSnack.averagelEnergy100g}}</td>
-  </tr>
-  <tr>
-    <td>{{vm.categories[2]}}</td>
-    <td>{{vm.totalObject.totalLunch.nbItems}}</td>
-    <td>{{vm.totalObject.totalLunch.totalWeight}}</td>
-    <td>{{vm.totalObject.totalLunch.totalEnergy}}</td>
-    <td>{{vm.totalObject.totalLunch.averagelEnergy100g}}</td>
-  </tr>
-  <tr>
-    <td>{{vm.categories[3]}}</td>
-    <td>{{vm.totalObject.totalDiner.nbItems}}</td>
-    <td>{{vm.totalObject.totalDiner.totalWeight}}</td>
-    <td>{{vm.totalObject.totalDiner.totalEnergy}}</td>
-    <td>{{vm.totalObject.totalDiner.averagelEnergy100g}}</td>
-  </tr>
-  <tr>
-    <td>All</td>
-    <td>{{vm.totalObject.totalAll.nbItems}}</td>
-    <td>{{vm.totalObject.totalAll.totalWeight}}</td>
-    <td>{{vm.totalObject.totalAll.totalEnergy}}</td>
-    <td>{{vm.totalObject.totalAll.averagelEnergy100g}}</td>
-  </tr>
-  </tbody>
+<!--Statistics table-->
+<div class="row">
+  <div class="panel panel-default">
 
-</table>
+    <div class="panel-heading clearfix">
+      <h4 class="panel-title panel-title-list pull-left">FoodList statistics</h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table ng-table="vm.itemTable" class="table bagofood-table-list table-condensed row-border v-middle" ng-show="($data.length > 0)">
+          <tbody>
+          <tr ng-repeat="categoryDataInformations in $data">
+            <td sortable="'category'" data-title="'Category'">{{categoryDataInformations.category}}</td>
+            <td sortable="'items'" data-title="'Items'">{{categoryDataInformations.nbItems}}</td>
+            <td sortable="'totalWeight'" data-title="'Total weight (g)'">{{categoryDataInformations.totalWeight}}</td>
+            <td sortable="'totalEnergy'" data-title="'Total energy (kcal)'">{{categoryDataInformations.totalEnergy}}</td>
+            <td sortable="'averagelEnergy100g'" data-title="'Average energy (kcal/100g)'">{{categoryDataInformations.averagelEnergy100g}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
