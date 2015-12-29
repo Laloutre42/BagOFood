@@ -10,10 +10,16 @@ angular.module('bagofood.core.service.product', [])
         url: ENV.apiEndpoint + '/product/origfdnm/:origfdnm',
         method: 'GET',
         isArray: true
+      },
+
+      getProductByIdWithDesignation: {
+        url: ENV.apiEndpoint + '/product/designation/:id',
+        method: 'GET',
+        isArray: true
       }
 
     }, {
       stripTrailingSlashes: false
     });
   });
-})();  
+})();
